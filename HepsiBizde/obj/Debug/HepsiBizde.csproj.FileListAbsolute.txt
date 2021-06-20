@@ -293,3 +293,7 @@ C:\Users\Emre\source\repos\Elektrik_Eticaret\HepsiBizde\obj\Debug\HepsiBizde.csp
 C:\Users\Emre\source\repos\Elektrik_Eticaret\HepsiBizde\obj\Debug\HepsiBizde.csproj.CopyComplete
 C:\Users\Emre\source\repos\Elektrik_Eticaret\HepsiBizde\obj\Debug\HepsiBizde.dll
 C:\Users\Emre\source\repos\Elektrik_Eticaret\HepsiBizde\obj\Debug\HepsiBizde.pdb
+C:\Users\Emre\source\repos\Elektrik_Eticaret\HepsiBizde\bin\EntityFramework.dll
+C:\Users\Emre\source\repos\Elektrik_Eticaret\HepsiBizde\bin\EntityFramework.SqlServer.dll
+C:\Users\Emre\source\repos\Elektrik_Eticaret\HepsiBizde\bin\EntityFramework.xml
+C:\Users\Emre\source\repos\Elektrik_Eticaret\HepsiBizde\bin\EntityFramework.SqlServer.xml
