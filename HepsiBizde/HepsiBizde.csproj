@@ -190,6 +190,16 @@
   <ItemGroup>
     <Folder Include="dosyalar\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Proje.Business\Proje.Business.csproj">
+      <Project>{dff48941-dbc8-46fa-8d6a-45c155069d56}</Project>
+      <Name>Proje.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Proje.DataAcces\Proje.DataAcces.csproj">
+      <Project>{AFF6C645-48DB-4635-A8C8-3469C5868BD0}</Project>
+      <Name>Proje.DataAcces</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

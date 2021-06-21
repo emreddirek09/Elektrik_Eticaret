@@ -1,0 +1,15 @@
+C:\Users\Emre\source\repos\Elektrik_Eticaret\Proje.Business\obj\Debug\Proje.Business.csprojAssemblyReference.cache
+C:\Users\Emre\source\repos\Elektrik_Eticaret\Proje.Business\obj\Debug\Proje.Business.csproj.CoreCompileInputs.cache
+C:\Users\Emre\source\repos\Elektrik_Eticaret\Proje.Business\bin\Debug\Proje.Business.dll.config
+C:\Users\Emre\source\repos\Elektrik_Eticaret\Proje.Business\bin\Debug\Proje.Business.dll
+C:\Users\Emre\source\repos\Elektrik_Eticaret\Proje.Business\bin\Debug\Proje.Business.pdb
+C:\Users\Emre\source\repos\Elektrik_Eticaret\Proje.Business\bin\Debug\EntityFramework.dll
+C:\Users\Emre\source\repos\Elektrik_Eticaret\Proje.Business\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Emre\source\repos\Elektrik_Eticaret\Proje.Business\bin\Debug\Proje.DataAcces.dll
+C:\Users\Emre\source\repos\Elektrik_Eticaret\Proje.Business\bin\Debug\Proje.DataAcces.pdb
+C:\Users\Emre\source\repos\Elektrik_Eticaret\Proje.Business\bin\Debug\Proje.DataAcces.dll.config
+C:\Users\Emre\source\repos\Elektrik_Eticaret\Proje.Business\bin\Debug\EntityFramework.xml
+C:\Users\Emre\source\repos\Elektrik_Eticaret\Proje.Business\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Emre\source\repos\Elektrik_Eticaret\Proje.Business\obj\Debug\Proje.Business.csproj.CopyComplete
+C:\Users\Emre\source\repos\Elektrik_Eticaret\Proje.Business\obj\Debug\Proje.Business.dll
+C:\Users\Emre\source\repos\Elektrik_Eticaret\Proje.Business\obj\Debug\Proje.Business.pdb

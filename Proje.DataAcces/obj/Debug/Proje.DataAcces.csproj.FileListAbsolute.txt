@@ -1,0 +1,12 @@
+C:\Users\Emre\source\repos\Elektrik_Eticaret\Proje.DataAcces\bin\Debug\Proje.DataAcces.dll.config
+C:\Users\Emre\source\repos\Elektrik_Eticaret\Proje.DataAcces\bin\Debug\Proje.DataAcces.dll
+C:\Users\Emre\source\repos\Elektrik_Eticaret\Proje.DataAcces\bin\Debug\Proje.DataAcces.pdb
+C:\Users\Emre\source\repos\Elektrik_Eticaret\Proje.DataAcces\bin\Debug\EntityFramework.dll
+C:\Users\Emre\source\repos\Elektrik_Eticaret\Proje.DataAcces\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Emre\source\repos\Elektrik_Eticaret\Proje.DataAcces\bin\Debug\EntityFramework.xml
+C:\Users\Emre\source\repos\Elektrik_Eticaret\Proje.DataAcces\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Emre\source\repos\Elektrik_Eticaret\Proje.DataAcces\obj\Debug\Proje.DataAcces.csprojAssemblyReference.cache
+C:\Users\Emre\source\repos\Elektrik_Eticaret\Proje.DataAcces\obj\Debug\Proje.DataAcces.csproj.CoreCompileInputs.cache
+C:\Users\Emre\source\repos\Elektrik_Eticaret\Proje.DataAcces\obj\Debug\Proje.DataAcces.csproj.CopyComplete
+C:\Users\Emre\source\repos\Elektrik_Eticaret\Proje.DataAcces\obj\Debug\Proje.DataAcces.dll
+C:\Users\Emre\source\repos\Elektrik_Eticaret\Proje.DataAcces\obj\Debug\Proje.DataAcces.pdb

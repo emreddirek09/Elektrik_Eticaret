@@ -84,7 +84,7 @@ namespace HepsiBizde
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txt_telefon;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txt_telefon;
 
         /// <summary>
         /// txt_adres control.
@@ -93,7 +93,7 @@ namespace HepsiBizde
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txt_adres;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txt_adres;
 
         /// <summary>
         /// BilgileriGüncelle control.

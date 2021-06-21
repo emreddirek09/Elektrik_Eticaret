@@ -36,17 +36,17 @@ namespace HepsiBizde
             //datareaderı çalıştırdık
             if (reader.Read())
             {
-                if (Income.Text =="")
-                {
-                    Response.Redirect("YönetimPaneli.aspx");
-                }
-                else
-                {
+                //if (Income.Text =="")
+                //{
+                //    Response.Redirect("YönetimPaneli.aspx");
+                //}
+                //else
+                //{
                     //sqlden dönen totalmoney ile labelde gösterdik. toplam gelir
                     Income.Text = Math.Round(Convert.ToDecimal(reader["totalmoney"]), 2).ToString();
                 }
                 
-            }
+            //}
             sqlConnection.Close();
         }
         //

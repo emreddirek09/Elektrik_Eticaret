@@ -93,14 +93,6 @@ namespace HepsiBizde
             {
                 DbConnection Database = new DbConnection();
                    
-
-
-
-
-
-
-
-
                 SqlConnection sqlConnection = Database.ConnectDatabase();
                 //veritabanı insert komutumuz,
 
@@ -149,8 +141,10 @@ namespace HepsiBizde
 
                 if (reader["KullaniciMail"].ToString() == TextBox2.Text && reader["KullaniciSifre"].ToString() == TextBox3.Text)
                 {//şifre ve kullanıcıadi doğruı ise  kulanici ıdsi hafızıda tutulur
-                    modified = reader["KullaniciId"].ToString(); Session["userid"] = reader["KullaniciId"].ToString();
-                    UyariLabel.Text = "Kullanici Adı Şifre Doğru Alışverişe Devam Edebilirsiniz"; OdemeDiv.Visible = true; Response.Redirect("Odeme.aspx");
+                    modified = reader["KullaniciId"].ToString(); 
+                    Session["userid"] = reader["KullaniciId"].ToString();
+                    UyariLabel.Text = "Kullanici Adı Şifre Doğru Alışverişe Devam Edebilirsiniz"; 
+                    OdemeDiv.Visible = true; Response.Redirect("UsersProfil.aspx");
                     //
                 }
                 else
@@ -198,8 +192,9 @@ namespace HepsiBizde
             }
             catch (Exception)
             {
-
-                Response.Redirect("homepage.aspx");
+                //  Response.Redirect("Odeme.aspx");
+              //Response.Redirect("homepage.aspx");
+                toplampara.Text = "dsadas";
             }
         }
 

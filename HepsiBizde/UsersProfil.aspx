@@ -38,13 +38,13 @@
                 <div class="form-group row">
                     <label for="colFormLabelLg" class="col-sm-2 col-form-label">Telefon</label>
                     <div class="col-sm-10">
-                        <input type="email" class="form-control" id="txt_telefon" runat="server">
+                        <input  class="form-control" id="txt_telefon" runat="server">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="colFormLabelLg" class="col-sm-2 col-form-label">Adres</label>
                     <div class="col-sm-10">
-                        <input type="email" class="form-control" id="txt_adres" runat="server">
+                        <input class="form-control" id="txt_adres" runat="server">
                     </div>
                 </div>
                 <div class="form-group row">

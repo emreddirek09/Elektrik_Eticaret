@@ -24,11 +24,15 @@ namespace HepsiBizde
             catch (Exception)
             {
 
-                
+             
             }
             //MENU VE SEPETTE BULUNAN ÜRÜNLERİ TEMİZLEME
             Listing();
 
+        }
+        protected void giris_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Odeme.aspx");
         }
 
         protected void Unnamed_Click(object sender, EventArgs e)
@@ -100,5 +104,7 @@ namespace HepsiBizde
             }
             sqlConnection.Close();//baglantımızı kapattık cikisbutton.Visible = true;
         }
+
+        
     }
 }

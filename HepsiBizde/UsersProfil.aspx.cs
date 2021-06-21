@@ -18,8 +18,18 @@ namespace HepsiBizde
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            Proje.Business.Kullanicilar kullanicilarNesne = new Proje.Business.Kullanicilar();
+            //int id = Convert.ToInt32(Session["userid"].ToString());
+            var veri = kullanicilarNesne.GirisYapanKullanici(1028);
+            txt_isim.Value = veri.KullaniciAdSoyad;
+            txt_mail.Value = veri.KullaniciMail;
+            txt_telefon.Value = veri.KullanıcıTelefon;
+            txt_adres.Value = veri.KullaniciAdres;         
+
+
             denemediv1.Visible = true;
         }
+
 
         protected void Button2_Click(object sender, EventArgs e)
         {
