@@ -32,7 +32,13 @@ namespace HepsiBizde
         }
         protected void giris_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Odeme.aspx");
+            
+            if (kullaniciId == null)
+            {
+                Response.Redirect("Odeme.aspx");                
+            }
+            Response.Redirect("UsersProfil.aspx");
+
         }
 
         protected void Unnamed_Click(object sender, EventArgs e)
@@ -43,7 +49,8 @@ namespace HepsiBizde
 
         protected void logout(object sender, EventArgs e)
         {
-            Session.Contents.Remove("userid"); Response.Redirect("Homepage.aspx", true);
+            Session.Contents.Remove("userid"); 
+            Response.Redirect("Homepage.aspx", true);
             //Response.Redirect("homepage.aspx");
         }
 

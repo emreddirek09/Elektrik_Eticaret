@@ -14,22 +14,35 @@ namespace HepsiBizde
             denemediv1.Visible = false;
             denemediv2.Visible = false;
             denemediv3.Visible = false;
+            
         }
-
+        Proje.Business.Kullanicilar kullanicilarNesne = new Proje.Business.Kullanicilar();
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Proje.Business.Kullanicilar kullanicilarNesne = new Proje.Business.Kullanicilar();
-            //int id = Convert.ToInt32(Session["userid"].ToString());
-            var veri = kullanicilarNesne.GirisYapanKullanici(1028);
-            txt_isim.Value = veri.KullaniciAdSoyad;
-            txt_mail.Value = veri.KullaniciMail;
-            txt_telefon.Value = veri.KullanıcıTelefon;
-            txt_adres.Value = veri.KullaniciAdres;         
+            try
+            {
 
+                int id = Convert.ToInt32(Session["userid"].ToString());
+                var veri = kullanicilarNesne.GirisYapanKullanici(id);
+                txt_isim.Value = veri.KullaniciAdSoyad;
+                txt_mail.Value = veri.KullaniciMail;
+                txt_telefon.Value = veri.KullanıcıTelefon;
+                txt_adres.Value = veri.KullaniciAdres;
+                denemediv1.Visible = true;
+            }
+            catch (Exception)
+            {
 
+                Response.Redirect("Odeme.aspx");
+            }
+            
+        }
+        protected void BilgileriGüncelle_Click(object sender, EventArgs e)
+        {
+            kullanicilarNesne.VeriGüncelle(Convert.ToInt32(Session["userid"].ToString()), txt_isim.Value, txt_mail.Value, txt_telefon.Value, txt_adres.Value);
+            Label1.Text = "Güncelleme Başarılı";
             denemediv1.Visible = true;
         }
-
 
         protected void Button2_Click(object sender, EventArgs e)
         {
@@ -39,6 +52,39 @@ namespace HepsiBizde
         protected void Button3_Click(object sender, EventArgs e)
         {
              denemediv3.Visible = true;
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            Session.Contents.Remove("userid");
+            Response.Redirect("Homepage.aspx", true);
+            Label1.Text = "";
+            Label2.Text = "";
+        }
+
+        protected void SifreGüncele_Click(object sender, EventArgs e)
+        {
+            var veri = kullanicilarNesne.VeriCek(Convert.ToInt32(Session["userid"].ToString()));
+            var sifre = veri.KullaniciSifre;
+            if (sifre == txt_mevcutSifre.Value)
+            {
+                if (txt_yeniSifre.Value == txt_yeniSifreOnay.Value)
+                {
+                    kullanicilarNesne.SifreGüncelle(Convert.ToInt32(Session["userid"].ToString()), txt_yeniSifre.Value);
+                    Label2.Text = "Şifre Değişikliği başarılı.";
+                    denemediv3.Visible = true;
+                }
+                else
+                {
+                    Label2.Text ="Şifre Onaylanamadı.";
+                    denemediv3.Visible = true;
+                }
+            }
+            else
+            {
+                Label2.Text = "Mevcut şifre yanlış. Lütfen tekrar kontrol ediniz.";
+                denemediv3.Visible = true;
+            }
         }
     }
 }

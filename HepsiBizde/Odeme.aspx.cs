@@ -118,9 +118,13 @@ namespace HepsiBizde
                     //statc Id ye okudugumuz Idyi atadık daha sonradan kulanmak için
                     modified = reader2["idsi"].ToString();
                 }
-                Session["userid"] = modified; sqlConnection.Close();  UyariLabel.Text = "Başarılı, Alışverişe Devam Edebilirsiniz";
+
+                Session["userid"] = modified; sqlConnection.Close();
+                Response.Redirect("Homepage.aspx");
+                UyariLabel.Text = "Başarılı, Alışverişe Devam Edebilirsiniz";
                 // üye kaydından sonra ödeme işlemini tamamlayabilir.
                 OdemeDiv.Visible = true;
+
             }
             
         }
@@ -194,7 +198,7 @@ namespace HepsiBizde
             {
                 //  Response.Redirect("Odeme.aspx");
               //Response.Redirect("homepage.aspx");
-                toplampara.Text = "dsadas";
+                toplampara.Text = "0";
             }
         }
 

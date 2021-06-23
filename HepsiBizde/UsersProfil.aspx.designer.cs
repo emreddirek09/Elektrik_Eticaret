@@ -105,6 +105,15 @@ namespace HepsiBizde
         protected global::System.Web.UI.WebControls.Button BilgileriGüncelle;
 
         /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+
+        /// <summary>
         /// denemediv2 control.
         /// </summary>
         /// <remarks>
@@ -129,7 +138,7 @@ namespace HepsiBizde
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txt_mevcutSifre;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword txt_mevcutSifre;
 
         /// <summary>
         /// txt_yeniSifre control.
@@ -138,7 +147,7 @@ namespace HepsiBizde
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txt_yeniSifre;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword txt_yeniSifre;
 
         /// <summary>
         /// txt_yeniSifreOnay control.
@@ -147,7 +156,7 @@ namespace HepsiBizde
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txt_yeniSifreOnay;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword txt_yeniSifreOnay;
 
         /// <summary>
         /// SifreGüncele control.
@@ -157,5 +166,14 @@ namespace HepsiBizde
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button SifreGüncele;
+
+        /// <summary>
+        /// Label2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label2;
     }
 }

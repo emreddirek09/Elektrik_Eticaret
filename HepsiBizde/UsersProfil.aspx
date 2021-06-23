@@ -14,7 +14,7 @@
                 <i class="fa fa-key" style="color: orange; font-size: x-large">
                     <asp:Button ID="Button3" CssClass="btn-outline-warning" OnClick="Button3_Click" runat="server" Text="Şifre Değiştir" /></i><br />
                 <i class="fa fa-sign-out" style="color: red; font-size: x-large">
-                    <asp:Button ID="Button4" CssClass="btn-outline-primary" runat="server" Text="Çıkış" /></i>
+                    <asp:Button ID="Button4" OnClick="Button4_Click" CssClass="btn-outline-primary" runat="server" Text="Çıkış" /></i>
             </div>
         </div>
         <div class="col-9">
@@ -48,8 +48,9 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <asp:Button ID="BilgileriGüncelle" CssClass=" btn btn-danger" runat="server" Text="Güncelle" />
+                    <asp:Button ID="BilgileriGüncelle" OnClick="BilgileriGüncelle_Click" CssClass=" btn btn-danger" runat="server" Text="Güncelle" />
                 </div>
+                <asp:Label ID="Label1"  runat="server" ForeColor="#CC0000"></asp:Label>
 
             </div>
             <div class="container-fluid" id="denemediv2" runat="server" visible="false">
@@ -64,24 +65,25 @@
                 <div class="form-group row">
                     <label for="colFormLabelSm" class="col-sm-2 col-form-label">Mevcut Şifre</label>
                     <div class="col-sm-10">
-                        <input class="form-control" id="txt_mevcutSifre" runat="server">
+                        <input type="password" class="form-control" id="txt_mevcutSifre" runat="server">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="colFormLabel" class="col-sm-2 col-form-label">Yeni Şifre</label>
                     <div class="col-sm-10">
-                        <input type="email" class="form-control" id="txt_yeniSifre" runat="server">
+                        <input type="password"  class="form-control" id="txt_yeniSifre" runat="server"/>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="colFormLabelLg" class="col-sm-2 col-form-label">Yeni Şifre Onay</label>
                     <div class="col-sm-10">
-                        <input type="email" class="form-control" id="txt_yeniSifreOnay" runat="server">
+                        <input type="password" class="form-control" id="txt_yeniSifreOnay" runat="server">
                     </div>
                 </div>                
                 <div class="form-group row">
-                    <asp:Button ID="SifreGüncele" CssClass=" btn btn-success" runat="server" Text="Güncelle" />
+                    <asp:Button ID="SifreGüncele" OnClick="SifreGüncele_Click" CssClass=" btn btn-success" runat="server" Text="Güncelle" />
                 </div>
+                <asp:Label ID="Label2"  runat="server" ForeColor="#CC0000"></asp:Label>
             </div>
         </div>
     </div>
