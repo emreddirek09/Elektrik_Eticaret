@@ -1,12 +1,10 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="User.master.cs" Inherits="HepsiBizde.User" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="HepsiBizde.Default" %>
 
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>BdElektrik E-Ticaret</title>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -15,30 +13,11 @@
 </head>
 <body>
     <form id="form1" runat="server">
-
-        <div class="d-flex" id="wrapper">
-            <div class="bg-light border-right" id="sidebar-wrapper">
-                <div style="background-color: #ebeaf4!important; height: 57px !important;"
-                    class="sidebar-heading">
-                    <a href="Default.aspx">
-                        <img style="max-width: 180px" src="assets/logo.png" /></a>
-                </div>
-                <div class="list-group list-group-flush">
-                    <asp:Repeater ID="Categories" runat="server">
-                        <ItemTemplate>
-                            <a href='Homepage.aspx?KategoriId=<%# Eval("KategoriId")%>' class="list-group-item list-group-item-action bg-light"><%# Eval("KategoriAd")%></a>
-                        </ItemTemplate>
-                    </asp:Repeater>
-
-                </div>
-            </div>
-            <div id="page-content-wrapper">
+        <div id="page-content-wrapper">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-                    <button class="btn btn-primary" id="menu-toggle"><span>*</span>
-                    </button>
+                    <a href="Default.aspx"><img style="max-width: 180px" src="assets/logo.png" /></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
                         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                             <li class="nav-item dropdown">
                                 <a class="nav-link" id="navbarDropdown1" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -48,12 +27,10 @@
                                     <asp:Button Text="Çıkış" OnClick="logout" class="dropdown-item bg-danger" runat="server" />
                                 </div>
                             </li>
-
                             <li class="nav-item dropdown">
                                 <a class="nav-link " id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="fa fa-shopping-bag" style="color: red; font-size: x-large"><sup>
                                         <asp:Label ID="sup" runat="server"></asp:Label></sup></i>
-
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <asp:Repeater ID="basketlist" runat="server">
@@ -68,20 +45,16 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="Login.aspx"><i class="fa  fa-unlock-alt" style="color: cornflowerblue; font-size: x-large"></i></a>
-
                             </li>
                         </ul>
                     </div>
                 </nav>
                 <div class="container-fluid">
-                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                    </asp:ContentPlaceHolder>
+                    <h1> DENEME SAYFASI</h1>
 
                 </div>
             </div>
-        </div>
     </form>
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="css/scripts.js"></script>

@@ -40,19 +40,28 @@ namespace HepsiBizde
             Response.Redirect("UsersProfil.aspx");
 
         }
-
+        protected void logout(object sender, EventArgs e)
+        {
+            Session.Contents.Remove("userid");
+            Response.Redirect("Default.aspx", true);
+            //Response.Redirect("homepage.aspx");
+        }
         protected void Unnamed_Click(object sender, EventArgs e)
         {
             //session sepetimiz dolu ise ödeme sayfasına gönderirir.
             Response.Redirect("Odeme.aspx");
         }
-
-        protected void logout(object sender, EventArgs e)
+        protected void Unnamed_Click1(object sender, EventArgs e)
         {
-            Session.Contents.Remove("userid"); 
-            Response.Redirect("Homepage.aspx", true);
+            Session.Contents.Remove("basket");
+            sup.Text = "0";
+            //sepet temizlenir
+            Response.Redirect(Page.Request.Url.ToString(), true);
             //Response.Redirect("homepage.aspx");
+
         }
+
+        
 
         protected void List_Categories_On_Menu()
         {
@@ -78,9 +87,7 @@ namespace HepsiBizde
                 sup.Text = "0";
                 basketlist.DataSource = Session["basket"];
                 basketlist.DataBind();
-            }
-           
-            
+            }            
         }
 
 
@@ -90,15 +97,7 @@ namespace HepsiBizde
             SEpettekiUrunleriGetir();
 
         }
-        protected void Unnamed_Click1(object sender, EventArgs e)
-        {
-            Session.Contents.Remove("basket");
-            sup.Text = "0";
-            //sepet temizlenir
-            Response.Redirect(Page.Request.Url.ToString(), true);
-            //Response.Redirect("homepage.aspx");
-            
-        }
+        
 
         protected void Bring_Member()
         {

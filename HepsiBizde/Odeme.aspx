@@ -113,6 +113,6 @@
         </div>
     </div>
     <div id="islemdiv" runat="server" visible="false" class="alert alert-warning w-100" role="alert">
-        Teşekkürler Ödemeniz Başarıyla Alındı <a class="btn btn-primary" href="Homepage.aspx">Anasayfaya dönmek için tıklayınız</a>
+        Teşekkürler Ödemeniz Başarıyla Alındı <a class="btn btn-primary" href="Defaut.aspx">Anasayfaya dönmek için tıklayınız</a>
     </div>
 </asp:Content>

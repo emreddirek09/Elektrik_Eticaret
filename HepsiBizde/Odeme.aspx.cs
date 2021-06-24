@@ -13,7 +13,7 @@ namespace HepsiBizde
         static string kullaniciId; 
         static string modified = "0";
         List<string> emails = new List<string>();
-
+        List<Sepet> liste2 = new List<Sepet>();
         protected void Page_Load(object sender, EventArgs e)
         {
             siparisler.DataSource = Session["basket"];
@@ -66,19 +66,7 @@ namespace HepsiBizde
             //uye kontrolü
         }
 
-        protected void Unnamed_Click1(object sender, EventArgs e)
-        {
-
-            //veritabanı connectionumuzun oldugu classs
-            DbConnection Database = new DbConnection();
-            SqlConnection sqlConnection2 = Database.ConnectDatabase();
-            //veritabanına bağlandık
-
-            SqlCommand COMMAND = new SqlCommand("Insert into Siparisler (SiparisMusteriId,SiparisTarih,SiparisFiyat) VALUES(@SiparisMusteriId,@SiparisTarih,@SiparisFiyat) ", sqlConnection2); // parametre ile insert komudumuz
-            COMMAND.Parameters.AddWithValue("@SiparisMusteriId", modified); COMMAND.Parameters.AddWithValue("@SiparisTarih", DateTime.Now); COMMAND.Parameters.AddWithValue("@SiparisFiyat", Convert.ToDouble(toplampara.Text));
-            COMMAND.ExecuteNonQuery(); islemdiv.Visible = true;
-            //komutlarımızı gönderdikten sona islem yapılabilecek div görünür hale getirildi
-        }
+        
 
         protected void Unnamed_Click(object sender, EventArgs e)
         {
@@ -159,12 +147,38 @@ namespace HepsiBizde
             }
             sqlConnection.Close();
         }
+        string a;
+        protected void Unnamed_Click1(object sender, EventArgs e)
+        {
+            //Ödeme işlememi tamamlama
+
+            //veritabanı connectionumuzun oldugu classs
+            DbConnection Database = new DbConnection();
+            SqlConnection sqlConnection2 = Database.ConnectDatabase();
+            //veritabanına bağlandık
+
+            SqlCommand COMMAND = new SqlCommand("Insert into Siparisler (SiparisMusteriId,SiparisTarih,SiparisFiyat,Urünler) VALUES(@SiparisMusteriId,@SiparisTarih,@SiparisFiyat,@Urünlerr) ", sqlConnection2); // parametre ile insert komudumuz
+            COMMAND.Parameters.AddWithValue("@SiparisMusteriId", modified);
+            COMMAND.Parameters.AddWithValue("@SiparisTarih", DateTime.Now);
+            COMMAND.Parameters.AddWithValue("@SiparisFiyat", Convert.ToDouble(toplampara.Text));
+
+            foreach (var item in liste2)
+            {
+                 a=  string.Join(",", item);
+            }
+         
+           COMMAND.Parameters.AddWithValue("@Urünlerr", a);
+           
+           
+            COMMAND.ExecuteNonQuery(); islemdiv.Visible = true;
+            //komutlarımızı gönderdikten sona islem yapılabilecek div görünür hale getirildi
+        }
 
         protected void ToplamHesap()
         {
 
             //sepet hesabı
-            List<Sepet> liste2 = new List<Sepet>();
+            
             double toplamHesap = 0;
             //sepete
 

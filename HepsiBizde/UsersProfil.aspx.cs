@@ -57,7 +57,7 @@ namespace HepsiBizde
         protected void Button4_Click(object sender, EventArgs e)
         {
             Session.Contents.Remove("userid");
-            Response.Redirect("Homepage.aspx", true);
+            Response.Redirect("Default.aspx", true);
             Label1.Text = "";
             Label2.Text = "";
         }
