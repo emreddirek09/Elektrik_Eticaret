@@ -18,5 +18,7 @@ namespace Proje.DataAcces
         public Nullable<int> SiparisMusteriId { get; set; }
         public Nullable<System.DateTime> SiparisTarih { get; set; }
         public Nullable<decimal> SiparisFiyat { get; set; }
+        public string Urünler { get; set; }
+        public Nullable<bool> OnayDurumu { get; set; }
     }
 }

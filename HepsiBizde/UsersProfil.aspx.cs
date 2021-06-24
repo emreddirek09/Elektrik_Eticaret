@@ -17,6 +17,8 @@ namespace HepsiBizde
             
         }
         Proje.Business.Kullanicilar kullanicilarNesne = new Proje.Business.Kullanicilar();
+        Proje.Business.Siparisler siparislerNesne = new Proje.Business.Siparisler();
+
         protected void Button1_Click(object sender, EventArgs e)
         {
             try
@@ -47,6 +49,16 @@ namespace HepsiBizde
         protected void Button2_Click(object sender, EventArgs e)
         {
             denemediv2.Visible = true;
+            if (Convert.ToInt32(Session["userid"].ToString()) == -1)
+            {
+                Response.Redirect("Odeme.aspx");
+            }
+            else
+            {
+                var liste = siparislerNesne.Listele(Convert.ToInt32(Session["userid"].ToString()));
+                GridView1.DataSource = liste;
+                GridView1.DataBind();
+            }            
         }
 
         protected void Button3_Click(object sender, EventArgs e)
@@ -86,5 +98,7 @@ namespace HepsiBizde
                 denemediv3.Visible = true;
             }
         }
+
+        
     }
 }

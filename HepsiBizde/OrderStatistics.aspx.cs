@@ -20,7 +20,7 @@ namespace HepsiBizde
         protected void All_Orders_Customers_List()
         {
             DbConnection Vtbaglanti = new DbConnection(); SqlConnection CONN = Vtbaglanti.ConnectDatabase();
-            SqlCommand COMMAND = new SqlCommand("Select * from Siparisler inner join Kullanicilar on Kullanicilar.KullaniciId = Siparisler.SiparisMusteriId ", CONN); SqlDataReader reader = COMMAND.ExecuteReader();
+            SqlCommand COMMAND = new SqlCommand("Select * from Siparisler inner join Kullanicilar on Kullanicilar.KullaniciId = Siparisler.SiparisMusteriId Where Siparisler.OnayDurumu = 1 ", CONN); SqlDataReader reader = COMMAND.ExecuteReader();
             //İNNER JOİN ile kullanıcı ve sipariş birleştirilmesi yaptık
             OrdersRepeater.DataSource = reader;
             OrdersRepeater.DataBind();//repeaterımıza yükledik
@@ -30,7 +30,7 @@ namespace HepsiBizde
         protected void CalculateTotalIncome()
         {
             DbConnection baglanti = new DbConnection(); SqlConnection sqlConnection = baglanti.ConnectDatabase();
-            SqlCommand komut = new SqlCommand("Select sum(Siparisler.SiparisFiyat) as totalmoney from Siparisler", sqlConnection);
+            SqlCommand komut = new SqlCommand("Select sum(Siparisler.SiparisFiyat) as totalmoney from Siparisler Where OnayDurumu = 1", sqlConnection);
             //sql aggregate fonksiyonu ile toplam veriler hesaplanmıştır.
             SqlDataReader reader = komut.ExecuteReader();
             //datareaderı çalıştırdık

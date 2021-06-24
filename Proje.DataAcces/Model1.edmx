@@ -39,6 +39,8 @@
           <Property Name="SiparisMusteriId" Type="int" />
           <Property Name="SiparisTarih" Type="datetime" />
           <Property Name="SiparisFiyat" Type="money" />
+          <Property Name="Urünler" Type="nvarchar(max)" />
+          <Property Name="OnayDurumu" Type="bit" />
         </EntityType>
         <EntityType Name="Urunler">
           <Key>
@@ -98,6 +100,8 @@
           <Property Name="SiparisMusteriId" Type="Int32" />
           <Property Name="SiparisTarih" Type="DateTime" Precision="3" />
           <Property Name="SiparisFiyat" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Urünler" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OnayDurumu" Type="Boolean" />
         </EntityType>
         <EntityType Name="Urunler">
           <Key>
@@ -111,7 +115,7 @@
           <Property Name="UrunMarkaId" Type="Int32" />
           <Property Name="UrunResim" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityContainer Name="bdelekti_E_TicaretEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="bdelekti_ETicaretEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Kategoriler" EntityType="Self.Kategoriler" />
           <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" />
           <EntitySet Name="Markalar" EntityType="Self.Markalar" />
@@ -123,7 +127,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="bdelekti_E_TicaretModelStoreContainer" CdmEntityContainer="bdelekti_E_TicaretEntities">
+        <EntityContainerMapping StorageEntityContainer="bdelekti_E_TicaretModelStoreContainer" CdmEntityContainer="bdelekti_ETicaretEntities">
           <EntitySetMapping Name="Kategoriler">
             <EntityTypeMapping TypeName="bdelekti_E_TicaretModel.Kategoriler">
               <MappingFragment StoreEntitySet="Kategoriler">
@@ -160,6 +164,8 @@
                 <ScalarProperty Name="SiparisMusteriId" ColumnName="SiparisMusteriId" />
                 <ScalarProperty Name="SiparisTarih" ColumnName="SiparisTarih" />
                 <ScalarProperty Name="SiparisFiyat" ColumnName="SiparisFiyat" />
+                <ScalarProperty Name="Urünler" ColumnName="Urünler" />
+                <ScalarProperty Name="OnayDurumu" ColumnName="OnayDurumu" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

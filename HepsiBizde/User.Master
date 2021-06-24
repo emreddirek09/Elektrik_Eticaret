@@ -44,8 +44,9 @@
                                 <a class="nav-link" id="navbarDropdown1" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <asp:Label Text="Hoşgeldiniz " ID="Adsoyad" runat="server" /></a>
                                 <div runat="server" id="cikisbutton" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown1">
+                                    <a href="UsersProfil.aspx" class="dropdown-item bg-light">Profil</a>
                                     <asp:Button Text="Giriş" ID="giris" OnClick="giris_Click" class="dropdown-item bg-light" runat="server" />
-                                    <asp:Button Text="Çıkış" OnClick="logout" class="dropdown-item bg-danger" runat="server" />
+                                    <asp:Button Text="Çıkış" OnClick="logout" class="dropdown-item bg-light" runat="server" />
                                 </div>
                             </li>
 

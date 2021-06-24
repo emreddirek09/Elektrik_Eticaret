@@ -54,7 +54,7 @@
 
             </div>
             <div class="container-fluid" id="denemediv2" runat="server" visible="false">
-                dsadadasd2
+                <asp:GridView ID="GridView1" runat="server"></asp:GridView>
             </div>
 
             <div class="container-fluid" id="denemediv3" runat="server" visible="false">

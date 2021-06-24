@@ -164,7 +164,8 @@ namespace HepsiBizde
 
             foreach (var item in liste2)
             {
-                 a=  string.Join(",", item);
+                //a +=  string.Join(",", item.Name);
+                a += item.Name + ",";
             }
          
            COMMAND.Parameters.AddWithValue("@Urünlerr", a);

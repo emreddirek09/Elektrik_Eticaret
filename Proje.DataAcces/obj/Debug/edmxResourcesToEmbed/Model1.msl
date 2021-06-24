@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="bdelekti_E_TicaretModelStoreContainer" CdmEntityContainer="bdelekti_E_TicaretEntities">
+  <EntityContainerMapping StorageEntityContainer="bdelekti_E_TicaretModelStoreContainer" CdmEntityContainer="bdelekti_ETicaretEntities">
     <EntitySetMapping Name="Kategoriler">
       <EntityTypeMapping TypeName="bdelekti_E_TicaretModel.Kategoriler">
         <MappingFragment StoreEntitySet="Kategoriler">
@@ -37,6 +37,8 @@
           <ScalarProperty Name="SiparisMusteriId" ColumnName="SiparisMusteriId" />
           <ScalarProperty Name="SiparisTarih" ColumnName="SiparisTarih" />
           <ScalarProperty Name="SiparisFiyat" ColumnName="SiparisFiyat" />
+          <ScalarProperty Name="Urünler" ColumnName="Urünler" />
+          <ScalarProperty Name="OnayDurumu" ColumnName="OnayDurumu" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

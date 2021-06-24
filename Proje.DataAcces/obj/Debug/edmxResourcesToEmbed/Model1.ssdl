@@ -34,6 +34,8 @@
     <Property Name="SiparisMusteriId" Type="int" />
     <Property Name="SiparisTarih" Type="datetime" />
     <Property Name="SiparisFiyat" Type="money" />
+    <Property Name="Urünler" Type="nvarchar(max)" />
+    <Property Name="OnayDurumu" Type="bit" />
   </EntityType>
   <EntityType Name="Urunler">
     <Key>

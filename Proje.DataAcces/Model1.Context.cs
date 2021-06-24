@@ -13,10 +13,10 @@ namespace Proje.DataAcces
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class bdelekti_E_TicaretEntities : DbContext
+    public partial class bdelekti_ETicaretEntities : DbContext
     {
-        public bdelekti_E_TicaretEntities()
-            : base("name=bdelekti_E_TicaretEntities")
+        public bdelekti_ETicaretEntities()
+            : base("name=bdelekti_ETicaretEntities")
         {
         }
     

@@ -34,6 +34,8 @@
     <Property Name="SiparisMusteriId" Type="Int32" />
     <Property Name="SiparisTarih" Type="DateTime" Precision="3" />
     <Property Name="SiparisFiyat" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Urünler" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OnayDurumu" Type="Boolean" />
   </EntityType>
   <EntityType Name="Urunler">
     <Key>
@@ -47,7 +49,7 @@
     <Property Name="UrunMarkaId" Type="Int32" />
     <Property Name="UrunResim" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
   </EntityType>
-  <EntityContainer Name="bdelekti_E_TicaretEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="bdelekti_ETicaretEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Kategoriler" EntityType="Self.Kategoriler" />
     <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" />
     <EntitySet Name="Markalar" EntityType="Self.Markalar" />
