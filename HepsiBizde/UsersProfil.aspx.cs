@@ -55,7 +55,7 @@ namespace HepsiBizde
             }
             else
             {
-                var liste = siparislerNesne.Listele(Convert.ToInt32(Session["userid"].ToString()));
+                var liste = siparislerNesne.Listele(Convert.ToInt32(Session["userid"].ToString()));                
                 GridView1.DataSource = liste;
                 GridView1.DataBind();
             }            

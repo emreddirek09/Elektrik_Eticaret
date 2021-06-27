@@ -113,6 +113,6 @@
         </div>
     </div>
     <div id="islemdiv" runat="server" visible="false" class="alert alert-warning w-100" role="alert">
-        Teşekkürler Ödemeniz Başarıyla Alındı <a class="btn btn-primary" href="Default.aspx">Anasayfaya dönmek için tıklayınız</a>
+        Teşekkürler Ödemeniz Başarıyla Alındı. Siparişiniz Kontrol Edilecektir. <a class="btn btn-primary" href="Default.aspx">Anasayfaya dönmek için tıklayınız</a>
     </div>
 </asp:Content>
