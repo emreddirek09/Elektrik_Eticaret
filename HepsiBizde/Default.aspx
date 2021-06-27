@@ -18,6 +18,14 @@
                 <a href="Default.aspx">
                     <img style="max-width: 180px" src="assets/logo.png" /></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <asp:DropDownList ID="DropDownList1Urün" AutoPostBack="true" Width="300" OnSelectedIndexChanged="DropDownList1Urün_SelectedIndexChanged" CssClass="form-control container" BackColor="#f0f0f0" runat="server">
+                    <asp:ListItem Value="-1">Ürünler</asp:ListItem>                    
+                </asp:DropDownList>
+                <asp:DropDownList ID="DropDownList2" Width="300" autopostback="true" CssClass="form-control container" BackColor="#f0f0f0" runat="server">
+                    <asp:ListItem Value="-1">Kampanyalar</asp:ListItem>
+                    <asp:ListItem>deneme1</asp:ListItem>
+                    <asp:ListItem>deneme2</asp:ListItem>
+                </asp:DropDownList>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                         <li class="nav-item dropdown">
@@ -86,7 +94,7 @@
                 </div>
             </div>
             <br />
-            <div class="row text-center" style="background-color:aliceblue">
+            <div class="row text-center" style="background-color: aliceblue">
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="bg-image hover-overlay ripple">
                         <img src="dosyalar/ulker-albeni-kaplamali-cikolatali-kek-35-gr-37f2ff.jpg" style="max-width: 100%; height: auto" class="img-fluid" />
@@ -94,8 +102,6 @@
                 </div>
             </div>
             <br />
-
-
             <div class="row text-center">
                 <div class="col-lg-6 col-md-3 col-sm-4">
                     <div class="bg-image hover-overlay ripple">
@@ -131,6 +137,7 @@
                     </div>
                 </div>
             </div>
+        </div>
     </form>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>

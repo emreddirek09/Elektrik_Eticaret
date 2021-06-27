@@ -16,10 +16,14 @@
                 <br />
                 Select Category
                 <asp:DropDownList DataTextField="KategoriAd" DataValueField="KategoriId" ID="CategoryDropdown" CssClass="form-control" runat="server">
+                    <asp:ListItem Value="-1">Kategori Seçiniz..</asp:ListItem>
+                    
                 </asp:DropDownList>
                 <br />
                 Select Brand
                 <asp:DropDownList DataTextField="MarkaAdi" DataValueField="MarkaId" ID="BrandDropdown" CssClass="form-control" runat="server">
+                    <asp:ListItem Value="-1">Marka Seçiniz..</asp:ListItem>
+                    
                 </asp:DropDownList>
                 <br />
                 Description
@@ -91,7 +95,7 @@
                 </div>
             </div>
 
-            <div class="col-md-6 border border-dark">
+            <div class="col-md-4 border border-dark">
                 <br />
                 <b>Add Category</b><br />
                 Category Name
@@ -101,21 +105,31 @@
                 <asp:Button ValidationGroup="g2" ID="KayitButton" OnClick="KategoriKayit_Click" Text="Save" class="btn btn-dark" runat="server" />
             </div>
 
-            <div class="col-md-6 border border-dark">
+            <div class="col-md-4 border border-dark">
+                <br />
+                <b>Add Kampanya</b><br />
+                Kampaya Name
+            <input type="text" class="form-control border-info" id="Text1" runat="server" />
+                <asp:RequiredFieldValidator SetFocusOnError="true" Display="Dynamic" ForeColor="Wheat" ErrorMessage="Zorunlu Alan" Font-Bold="true" BackColor="Red" ValidationGroup="g2" ControlToValidate="CategoryName" runat="server" />
+                <br />
+                <asp:Button ValidationGroup="g2" ID="Button1" OnClick="KategoriKayit_Click" Text="Save" class="btn btn-dark" runat="server" />
+            </div>
+
+            <div class="col-md-4 border border-dark">
                 <br />
                 <b>Brand </b>
                 <br />
                 Brand Name
             <input type="text" class="form-control border-info" id="BrandName" runat="server" />
-                                <asp:RequiredFieldValidator SetFocusOnError="true" Display="Dynamic" ForeColor="Wheat" ErrorMessage="Zorunlu Alan" Font-Bold="true" BackColor="Red" ValidationGroup="g3" ControlToValidate="BrandName" runat="server" />
-                <asp:Button  ValidationGroup="g3" Text="Save" OnClick="MarkaKayit_Click" class="btn btn-dark my-2" runat="server" />
+                <asp:RequiredFieldValidator SetFocusOnError="true" Display="Dynamic" ForeColor="Wheat" ErrorMessage="Zorunlu Alan" Font-Bold="true" BackColor="Red" ValidationGroup="g3" ControlToValidate="BrandName" runat="server" />
+                <asp:Button ValidationGroup="g3" Text="Save" OnClick="MarkaKayit_Click" class="btn btn-dark my-2" runat="server" />
                 <br />
 
             </div>
 
         </div>
         <div class="row">
-            <div class="col-md-6 border border-warning">
+            <div class="col-md-4 border border-warning">
                 <h3>Categories</h3>
                 <div style="height: 400px; overflow-y: scroll;">
                     <center>
@@ -147,7 +161,41 @@
                 </div>
             </div>
 
-            <div class="col-md-6 border border-success">
+            
+            <div class="col-md-4 border border-success">
+                <h3>Kampyanya</h3>
+                <br />
+                <div style="height: 400px; overflow-y: scroll;">
+                    <center>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>ID
+                                </th>
+                                <th>Name
+                                </th>
+                                <th>Process
+                                </th>
+                                
+                            </tr>
+                        </thead>
+                        <asp:repeater ID="Repeater2" runat="server">
+                            <itemtemplate>
+                                <tr>
+                            <td>#<%# Eval("MarkaId")%></td>
+                            <td><%# Eval("MarkaAdi")%></td>
+                            <td><asp:linkbutton OnClientClick="return confirm('Marka Silinecek Emin Misiniz ?');" text="delete" OnClick="Unnamed_Click1" CommandArgument='<%# Eval("MarkaId")%>' CssClass="btn btn-dark" runat="server" /></td>
+                            </tr>
+                            </itemtemplate>
+                        </asp:repeater>
+                       
+                    </table>
+
+                        </center>
+                </div>
+            </div>
+
+            <div class="col-md-4 border border-success">
                 <h3>Brands</h3>
                 <br />
                 <div style="height: 400px; overflow-y: scroll;">

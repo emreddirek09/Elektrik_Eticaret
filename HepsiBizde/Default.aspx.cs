@@ -13,6 +13,11 @@ namespace HepsiBizde
         static string kullaniciId;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                UrünCek();
+            }
+            
             try
             {
                 kullaniciId = Session["userid"].ToString();
@@ -38,6 +43,19 @@ namespace HepsiBizde
                 sup.Text = "0";
                 basketlist.DataSource = Session["basket"];
                 basketlist.DataBind();
+            }
+        }
+
+        private void UrünCek()
+        {
+            Proje.Business.Kategoriler kategorilerNesne = new Proje.Business.Kategoriler();
+
+            foreach (var item in kategorilerNesne.Listele())
+            {
+                var i = item.KategoriId;
+                string KatAdi = kategorilerNesne.KategoriCek(i).KategoriAd;
+                int Katid = kategorilerNesne.KategoriCek(i).KategoriId;                
+                DropDownList1Urün.Items.Add(new ListItem(KatAdi, "Homepage.aspx?KategoriId="+ Katid.ToString()));
             }
         }
         
@@ -108,6 +126,21 @@ namespace HepsiBizde
             Session.Contents.Remove("userid");
             Response.Redirect("Default.aspx", true);
             //Response.Redirect("homepage.aspx");
+        }
+
+        protected void DropDownList1Urün_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string a = DropDownList1Urün.SelectedItem.Value;
+            if (DropDownList1Urün.SelectedItem.Value == "-1")
+            {
+                Response.Redirect("Default.aspx");
+            }
+            else
+            {
+                Response.Redirect(a);
+            }
+
+
         }
     }
 }
