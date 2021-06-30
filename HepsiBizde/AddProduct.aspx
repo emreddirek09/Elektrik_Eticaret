@@ -17,13 +17,20 @@
                 Select Category
                 <asp:DropDownList DataTextField="KategoriAd" DataValueField="KategoriId" ID="CategoryDropdown" CssClass="form-control" runat="server">
                     <asp:ListItem Value="-1">Kategori Seçiniz..</asp:ListItem>
-                    
+
+                </asp:DropDownList>
+                <br />
+
+                Select Kampanya
+                <asp:DropDownList DataTextField="KampanyaAd" DataValueField="KampanyaAd" ID="DropDownListKampanya" CssClass="form-control" runat="server">
+                    <asp:ListItem Value="-1">Kampanya Seçiniz..</asp:ListItem>
+
                 </asp:DropDownList>
                 <br />
                 Select Brand
                 <asp:DropDownList DataTextField="MarkaAdi" DataValueField="MarkaId" ID="BrandDropdown" CssClass="form-control" runat="server">
                     <asp:ListItem Value="-1">Marka Seçiniz..</asp:ListItem>
-                    
+
                 </asp:DropDownList>
                 <br />
                 Description
@@ -33,6 +40,12 @@
                 Price(TL)
  
                 <asp:TextBox class="form-control border-info" ID="productprice" runat="server" />
+                <asp:RequiredFieldValidator SetFocusOnError="true" Display="Dynamic" ForeColor="Wheat" ErrorMessage="Zorunlu Alan" Font-Bold="true" BackColor="Red" ValidationGroup="g1" ControlToValidate="productprice" runat="server" />
+                <br />
+                <br />
+                Discounted Price(TL)
+ 
+                <asp:TextBox class="form-control border-info" ID="discountedproductprice" runat="server" />
                 <asp:RequiredFieldValidator SetFocusOnError="true" Display="Dynamic" ForeColor="Wheat" ErrorMessage="Zorunlu Alan" Font-Bold="true" BackColor="Red" ValidationGroup="g1" ControlToValidate="productprice" runat="server" />
                 <br />
                 <asp:Button Text="Save" ValidationGroup="g1" ID="savebutton" OnClick="UrunKaydedildi_Click" class="btn btn-dark" runat="server" />
@@ -102,17 +115,18 @@
             <input type="text" class="form-control border-info" id="CategoryName" runat="server" />
                 <asp:RequiredFieldValidator SetFocusOnError="true" Display="Dynamic" ForeColor="Wheat" ErrorMessage="Zorunlu Alan" Font-Bold="true" BackColor="Red" ValidationGroup="g2" ControlToValidate="CategoryName" runat="server" />
                 <br />
-                <asp:Button ValidationGroup="g2" ID="KayitButton" OnClick="KategoriKayit_Click" Text="Save" class="btn btn-dark" runat="server" />
+                <asp:Button ValidationGroup="g2" ID="KayitButton" OnClick="KategoriKayit_Click" Text="Save" class="btn btn-info" runat="server" />
             </div>
 
             <div class="col-md-4 border border-dark">
                 <br />
                 <b>Add Kampanya</b><br />
                 Kampaya Name
-            <input type="text" class="form-control border-info" id="Text1" runat="server" />
-                <asp:RequiredFieldValidator SetFocusOnError="true" Display="Dynamic" ForeColor="Wheat" ErrorMessage="Zorunlu Alan" Font-Bold="true" BackColor="Red" ValidationGroup="g2" ControlToValidate="CategoryName" runat="server" />
+                <input type="text" class="form-control border-info" id="KampanyaAdi" runat="server" /> 
+                 Kampaya Banner
+                <asp:FileUpload CssClass="form-control border-danger" ID="KampanyaBanner" runat="server" />
                 <br />
-                <asp:Button ValidationGroup="g2" ID="Button1" OnClick="KategoriKayit_Click" Text="Save" class="btn btn-dark" runat="server" />
+                <asp:Button  ID="AddKampanya" OnClick="AddKampanya_Click" Text="Save" class="btn btn-success" runat="server" />
             </div>
 
             <div class="col-md-4 border border-dark">
@@ -122,7 +136,7 @@
                 Brand Name
             <input type="text" class="form-control border-info" id="BrandName" runat="server" />
                 <asp:RequiredFieldValidator SetFocusOnError="true" Display="Dynamic" ForeColor="Wheat" ErrorMessage="Zorunlu Alan" Font-Bold="true" BackColor="Red" ValidationGroup="g3" ControlToValidate="BrandName" runat="server" />
-                <asp:Button ValidationGroup="g3" Text="Save" OnClick="MarkaKayit_Click" class="btn btn-dark my-2" runat="server" />
+                <asp:Button ValidationGroup="g3" Text="Save" OnClick="MarkaKayit_Click" class="btn btn-warning my-2" runat="server" />
                 <br />
 
             </div>
@@ -161,7 +175,7 @@
                 </div>
             </div>
 
-            
+
             <div class="col-md-4 border border-success">
                 <h3>Kampyanya</h3>
                 <br />
@@ -174,17 +188,20 @@
                                 </th>
                                 <th>Name
                                 </th>
+                                <th>Banner
+                                </th>
                                 <th>Process
                                 </th>
                                 
                             </tr>
                         </thead>
-                        <asp:repeater ID="Repeater2" runat="server">
+                        <asp:repeater ID="Repeater2Kampanya" runat="server">
                             <itemtemplate>
                                 <tr>
-                            <td>#<%# Eval("MarkaId")%></td>
-                            <td><%# Eval("MarkaAdi")%></td>
-                            <td><asp:linkbutton OnClientClick="return confirm('Marka Silinecek Emin Misiniz ?');" text="delete" OnClick="Unnamed_Click1" CommandArgument='<%# Eval("MarkaId")%>' CssClass="btn btn-dark" runat="server" /></td>
+                            <td><%# Eval("KampanyaId")%></td>
+                            <td><%# Eval("KampanyaAd")%></td>
+                            <td>  <asp:image Width="70" Height="70" imageurl= '<%# Eval("KampanyaBanner")%>' runat="server" /><br />
+                            <td><asp:linkbutton OnClientClick="return confirm('Marka Silinecek Emin Misiniz ?');" text="delete" OnClick="Unnamed_Click1" CommandArgument='<%# Eval("KampanyaId")%>' CssClass="btn btn-dark" runat="server" /></td>
                             </tr>
                             </itemtemplate>
                         </asp:repeater>

@@ -18,9 +18,6 @@ namespace HepsiBizde
             UrunKontrol();
         }
 
-
-        
-
         protected void UrunleriKategoriOlarakGetir(string cId)
         {
             DbConnection conn = new DbConnection();
@@ -28,7 +25,6 @@ namespace HepsiBizde
             SqlCommand command = new SqlCommand("select * from Urunler join Markalar on Markalar.MarkaId = Urunler.UrunMarkaId join Kategoriler on Kategoriler.KategoriId = Urunler.UrunKategoriId WHERE Urunler.UrunKategoriId='"+cId+"'", baglanti);
 
             SqlDataReader okuyucu = command.ExecuteReader();
-
             ProductRepeater.DataSource = okuyucu;
             ProductRepeater.DataBind();
             baglanti.Close();

@@ -48,6 +48,8 @@
     <Property Name="UrunKategoriId" Type="Int32" />
     <Property Name="UrunMarkaId" Type="Int32" />
     <Property Name="UrunResim" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UrünIndirimFiyat" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="UrünKampanyaId" Type="Int32" />
   </EntityType>
   <EntityContainer Name="bdelekti_ETicaretEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Kategoriler" EntityType="Self.Kategoriler" />
@@ -55,5 +57,14 @@
     <EntitySet Name="Markalar" EntityType="Self.Markalar" />
     <EntitySet Name="Siparisler" EntityType="Self.Siparisler" />
     <EntitySet Name="Urunler" EntityType="Self.Urunler" />
+    <EntitySet Name="Kampanyalar" EntityType="bdelekti_E_TicaretModel.Kampanyalar" />
   </EntityContainer>
+  <EntityType Name="Kampanyalar">
+    <Key>
+      <PropertyRef Name="KampanyaId" />
+    </Key>
+    <Property Name="KampanyaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KampanyaAd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="KampanyaBanner" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

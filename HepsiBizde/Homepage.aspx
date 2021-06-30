@@ -16,9 +16,8 @@
                             <p class="card-text"><%# Eval("UrunAciklama")%></p>
                             <p class="card-text"><%# Eval("KategoriAd")%> / <%# Eval("MarkaAdi")%></p>
                             <p class="text-primary font-weight-bold">
-                                <%# String.Format("{0:c}", Eval("UrunFiyat"))%>
+                              <s style="color:red"> <%# String.Format("{0:c}", Eval("UrünIndirimFiyat"))%></s>  <%# String.Format("{0:c}", Eval("UrunFiyat"))%>
                                </p>
-
                         </div>
                          <div style="margin:0 auto;text-align:center;">
                                 <asp:LinkButton  CssClass="btn btn-warning mb-4" Text='Sepete Ekle' CommandName='<%# Eval("UrunAd")%>' OnClick="Unnamed_Click" CommandArgument='<%# Eval("UrunId")%>' runat="server" />
@@ -30,6 +29,4 @@
             </ItemTemplate>
         </asp:Repeater>
     </div>
-
-
 </asp:Content>

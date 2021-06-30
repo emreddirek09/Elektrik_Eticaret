@@ -42,6 +42,15 @@ namespace HepsiBizde
         protected global::System.Web.UI.WebControls.DropDownList CategoryDropdown;
 
         /// <summary>
+        /// DropDownListKampanya control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListKampanya;
+
+        /// <summary>
         /// BrandDropdown control.
         /// </summary>
         /// <remarks>
@@ -67,6 +76,15 @@ namespace HepsiBizde
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox productprice;
+
+        /// <summary>
+        /// discountedproductprice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox discountedproductprice;
 
         /// <summary>
         /// savebutton control.
@@ -114,22 +132,31 @@ namespace HepsiBizde
         protected global::System.Web.UI.WebControls.Button KayitButton;
 
         /// <summary>
-        /// Text1 control.
+        /// KampanyaAdi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Text1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText KampanyaAdi;
 
         /// <summary>
-        /// Button1 control.
+        /// KampanyaBanner control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.FileUpload KampanyaBanner;
+
+        /// <summary>
+        /// AddKampanya control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddKampanya;
 
         /// <summary>
         /// BrandName control.
@@ -150,13 +177,13 @@ namespace HepsiBizde
         protected global::System.Web.UI.WebControls.Repeater Categories;
 
         /// <summary>
-        /// Repeater2 control.
+        /// Repeater2Kampanya control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Repeater2;
+        protected global::System.Web.UI.WebControls.Repeater Repeater2Kampanya;
 
         /// <summary>
         /// Repeater1 control.

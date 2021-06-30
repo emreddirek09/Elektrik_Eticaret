@@ -45,6 +45,8 @@
     <EntitySetMapping Name="Urunler">
       <EntityTypeMapping TypeName="bdelekti_E_TicaretModel.Urunler">
         <MappingFragment StoreEntitySet="Urunler">
+          <ScalarProperty Name="UrünKampanyaId" ColumnName="UrünKampanyaId" />
+          <ScalarProperty Name="UrünIndirimFiyat" ColumnName="UrünIndirimFiyat" />
           <ScalarProperty Name="UrunId" ColumnName="UrunId" />
           <ScalarProperty Name="UrunAd" ColumnName="UrunAd" />
           <ScalarProperty Name="UrunAciklama" ColumnName="UrunAciklama" />
@@ -52,6 +54,15 @@
           <ScalarProperty Name="UrunKategoriId" ColumnName="UrunKategoriId" />
           <ScalarProperty Name="UrunMarkaId" ColumnName="UrunMarkaId" />
           <ScalarProperty Name="UrunResim" ColumnName="UrunResim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kampanyalar">
+      <EntityTypeMapping TypeName="bdelekti_E_TicaretModel.Kampanyalar">
+        <MappingFragment StoreEntitySet="Kampanyalar">
+          <ScalarProperty Name="KampanyaBanner" ColumnName="KampanyaBanner" />
+          <ScalarProperty Name="KampanyaAd" ColumnName="KampanyaAd" />
+          <ScalarProperty Name="KampanyaId" ColumnName="KampanyaId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

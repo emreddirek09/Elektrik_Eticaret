@@ -19,13 +19,12 @@
                     <img style="max-width: 180px" src="assets/logo.png" /></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <asp:DropDownList ID="DropDownList1Urün" AutoPostBack="true" Width="300" OnSelectedIndexChanged="DropDownList1Urün_SelectedIndexChanged" CssClass="form-control container" BackColor="#f0f0f0" runat="server">
-                    <asp:ListItem Value="-1">Ürünler</asp:ListItem>                    
+                    <asp:ListItem Value="-1">Ürünler</asp:ListItem>
                 </asp:DropDownList>
-                <asp:DropDownList ID="DropDownList2" Width="300" autopostback="true" CssClass="form-control container" BackColor="#f0f0f0" runat="server">
+                <asp:Button ID="Kampanyalar" OnClick="Kampanyalar_Click" Width="300" CssClass="form-control container" BackColor="#f0f0f0" runat="server" Text="Kampanyalar" />
+                <%--<asp:DropDownList ID="DropDownList2Kampanya" Width="300" autopostback="true" CssClass="form-control container" BackColor="#f0f0f0" runat="server">
                     <asp:ListItem Value="-1">Kampanyalar</asp:ListItem>
-                    <asp:ListItem>deneme1</asp:ListItem>
-                    <asp:ListItem>deneme2</asp:ListItem>
-                </asp:DropDownList>
+                </asp:DropDownList>--%>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                         <li class="nav-item dropdown">
@@ -58,42 +57,24 @@
                     </ul>
                 </div>
             </nav>
-
-            <div class="row text-center p-4" style="background-color: lightgray">
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="card">
-                        <img src="dosyalar/kml171.jpg" class="card-img-top" />
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h2 style="background-color: lightgray" class="p-1 text-center">Son Eklenen Ürünler</h2>
+            <div class="row p-4 " style="background-color: lightgray">
+                <asp:Repeater ID="RepeaterUrunler" runat="server">
+                    <ItemTemplate>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="card" style="width:340px; height:500px !important">
+                                <img style="width:335px; height:335px !important" src="<%# Eval("UrunResim")%>" class="card-img-top" />
+                                <div class="card-body">
+                                    <p class="card-text"><%# Eval("UrunAciklama")%></p>
+                                </div>
+                                <asp:LinkButton  CssClass="btn btn-warning mb-4" Text='Sepete Ekle' CommandName='<%# Eval("UrunAd")%>' OnClick="Unnamed_Click" CommandArgument='<%# Eval("UrunId")%>' runat="server" />
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="card">
-                        <img src="dosyalar/kml171.jpg" style="max-width: 100%; height: auto" class="img-fluid" />
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="card">
-                        <img src="dosyalar/kml171.jpg" style="max-width: 100%; height: auto" class="img-fluid" />
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="card">
-                        <img src="dosyalar/kml171.jpg" style="max-width: 100%; height: auto" class="img-fluid" />
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
+                    </ItemTemplate>
+                </asp:Repeater>
             </div>
             <br />
+
             <div class="row text-center" style="background-color: aliceblue">
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="bg-image hover-overlay ripple">

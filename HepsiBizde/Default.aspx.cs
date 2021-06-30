@@ -16,6 +16,8 @@ namespace HepsiBizde
             if (!IsPostBack)
             {
                 UrünCek();
+                UrunleriGetir();
+                /*KapmayaCek()*/;
             }
             
             try
@@ -58,6 +60,17 @@ namespace HepsiBizde
                 DropDownList1Urün.Items.Add(new ListItem(KatAdi, "Homepage.aspx?KategoriId="+ Katid.ToString()));
             }
         }
+        //private void KapmayaCek()
+        //{
+        //    Proje.Business.Kampanyalar kampanyalarNesne = new Proje.Business.Kampanyalar();
+        //    foreach (var item in kampanyalarNesne.Listele())
+        //    {
+        //        var i = item.KampanyaId;
+        //        string KatAdi = kampanyalarNesne.KategoriCek(i).KampanyaAd;
+        //        int Katid = kampanyalarNesne.KategoriCek(i).KampanyaId;
+        //        DropDownList2Kampanya.Items.Add(new ListItem(KatAdi, "Homepage.aspx?KampanyaId=" + Katid.ToString()));
+        //    }
+        //}
         
 
         protected void SEpettekiUrunleriGetir()
@@ -140,7 +153,22 @@ namespace HepsiBizde
                 Response.Redirect(a);
             }
 
+        }
 
+        protected void Kampanyalar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("KampayaliUrunler.aspx");
+        }
+        protected void UrunleriGetir()
+        {
+            DbConnection ConnectDatabaseti = new DbConnection();
+            SqlConnection baglanti = ConnectDatabaseti.ConnectDatabase();
+            SqlCommand komut = new SqlCommand("select TOP(4)* from Urunler join Markalar on Markalar.MarkaId = Urunler.UrunMarkaId join Kategoriler on Kategoriler.KategoriId = Urunler.UrunKategoriId ", baglanti);
+            SqlDataReader reader = komut.ExecuteReader();
+            RepeaterUrunler.DataSource = reader;
+            RepeaterUrunler.DataBind();
+
+            baglanti.Close();
         }
     }
 }

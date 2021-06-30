@@ -30,5 +30,6 @@ namespace Proje.DataAcces
         public virtual DbSet<Markalar> Markalar { get; set; }
         public virtual DbSet<Siparisler> Siparisler { get; set; }
         public virtual DbSet<Urunler> Urunler { get; set; }
+        public virtual DbSet<Kampanyalar> Kampanyalar { get; set; }
     }
 }

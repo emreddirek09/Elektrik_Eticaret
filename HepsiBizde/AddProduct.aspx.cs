@@ -11,17 +11,17 @@ namespace HepsiBizde
     public partial class WebForm2 : System.Web.UI.Page
     {
         static string productId;
+
+        Proje.Business.Kampanyalar kampanyalarNesne = new Proje.Business.Kampanyalar();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-
+                KampanyaCek();
                 ShowAllDatas();
+                KampanyaListele();
             }
         }
-
-
-
 
         protected void MarkaKayit_Click(object sender, EventArgs e)
         {
@@ -84,7 +84,14 @@ namespace HepsiBizde
         {
             DbConnection ConnectDatabaseti = new DbConnection();
             SqlConnection conn = ConnectDatabaseti.ConnectDatabase();
-            SqlCommand sqlkomudumuz = new SqlCommand("Insert into Urunler (UrunAd,UrunAciklama,UrunFiyat,UrunKategoriId,UrunMarkaId,UrunResim) VALUES('"+ productname.Text + "','"+ productdesc.Text + "','" + Convert.ToDouble(productprice.Text) + "','"+ Convert.ToInt32(CategoryDropdown.SelectedItem.Value) + "','"+ Convert.ToInt32(BrandDropdown.SelectedItem.Value) + "',@UrunResim)", conn);
+            SqlCommand sqlkomudumuz = new SqlCommand("Insert into Urunler (UrunAd,UrunAciklama,UrunFiyat,UrunKategoriId,UrunMarkaId,UrünIndirimFiyat,UrünKampanyaId,UrunResim) VALUES('"
+                + productname.Text + "','"
+                + productdesc.Text + "','" 
+                + Convert.ToDouble(productprice.Text) + "','"
+                + Convert.ToInt32(CategoryDropdown.SelectedItem.Value) + "','"
+                + Convert.ToInt32(BrandDropdown.SelectedItem.Value) + "','" 
+                + Convert.ToInt32(DropDownListKampanya.SelectedValue) + "','"
+                + Convert.ToDouble(discountedproductprice.Text) + "',@UrunResim)", conn); 
 
             if (FileUpload1.HasFile)
             {
@@ -193,6 +200,7 @@ namespace HepsiBizde
             }
 
         }
+
         protected void ShowAllDatas()
         {
             ListCategories(); // kategori list
@@ -201,8 +209,6 @@ namespace HepsiBizde
             ListMarkaDrop(); //marka dropdown list
             GET_URUNLER_LISTE(); // ürünlerin repeaterda listelenmesi
         }
-
-
 
         protected void KategoriKayit_Click(object sender, EventArgs e)
         {
@@ -238,6 +244,7 @@ namespace HepsiBizde
             CategoryDropdown.DataBind();
             conn.Close();
         }
+
         protected void Unnamed_Click5(object sender, EventArgs e)
         {
             DbConnection ConnectDatabaseti = new DbConnection();
@@ -277,9 +284,51 @@ namespace HepsiBizde
             Response.Redirect("Addproduct.aspx");
         }
 
-        protected void Unnamed_Click6(object sender, EventArgs e)
+        protected void AddKampanya_Click(object sender, EventArgs e)
         {
+            string a;
 
+            if (KampanyaBanner.HasFile)
+            {
+                //fileuploadımız dosyaya sahipse 
+                if (KampanyaBanner.PostedFile.ContentLength < 102400)
+                {//ve dosya 10 mbden küçükse 
+                    KampanyaBanner.SaveAs(Server.MapPath("~/dosyalar/") + KampanyaBanner.FileName);
+                    a= "dosyalar/" + KampanyaBanner.FileName;
+                    //resim klasöre kaydedilir resminismi ise veritabanına yazılır
+                }
+                else
+                {
+                    //resim 10mb den büyük ise default resim atanır
+                    a = "https://st3.depositphotos.com/23594922/31822/v/600/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg";
+                }
+            }
+            else
+            {
+                //resim yok ise default resim atanır
+                a = "https://st3.depositphotos.com/23594922/31822/v/600/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg";
+            }
+            kampanyalarNesne.KampanyaEkle(KampanyaAdi.Value,a);
+            KampanyaAdi.Value = "";
+
+        }
+
+        public void KampanyaCek()
+        {
+            foreach (var item in kampanyalarNesne.Listele())
+            {
+                var i = item.KampanyaId;
+                string KatAdi = kampanyalarNesne.KategoriCek(i).KampanyaAd;
+                int Katid = kampanyalarNesne.KategoriCek(i).KampanyaId;
+                DropDownListKampanya.Items.Add(new ListItem(KatAdi, Katid.ToString()));
+            }
+        }
+
+        public void KampanyaListele()
+        {
+            var liste = kampanyalarNesne.Listele();
+            Repeater2Kampanya.DataSource = liste;
+            Repeater2Kampanya.DataBind();
         }
     }
 }

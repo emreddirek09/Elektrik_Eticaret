@@ -12,16 +12,10 @@ namespace Proje.DataAcces
     using System;
     using System.Collections.Generic;
     
-    public partial class Urunler
+    public partial class Kampanyalar
     {
-        public int UrunId { get; set; }
-        public string UrunAd { get; set; }
-        public string UrunAciklama { get; set; }
-        public Nullable<decimal> UrunFiyat { get; set; }
-        public Nullable<int> UrunKategoriId { get; set; }
-        public Nullable<int> UrunMarkaId { get; set; }
-        public string UrunResim { get; set; }
-        public Nullable<decimal> UrünIndirimFiyat { get; set; }
-        public Nullable<int> UrünKampanyaId { get; set; }
+        public int KampanyaId { get; set; }
+        public string KampanyaAd { get; set; }
+        public string KampanyaBanner { get; set; }
     }
 }

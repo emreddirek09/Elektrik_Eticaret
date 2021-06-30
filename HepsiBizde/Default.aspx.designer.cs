@@ -33,13 +33,13 @@ namespace HepsiBizde
         protected global::System.Web.UI.WebControls.DropDownList DropDownList1Urün;
 
         /// <summary>
-        /// DropDownList2 control.
+        /// Kampanyalar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.Button Kampanyalar;
 
         /// <summary>
         /// Adsoyad control.
@@ -85,5 +85,14 @@ namespace HepsiBizde
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater basketlist;
+
+        /// <summary>
+        /// RepeaterUrunler control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater RepeaterUrunler;
     }
 }
