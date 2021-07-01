@@ -17,6 +17,9 @@ namespace HepsiBizde
             {
                 UrünCek();
                 UrunleriGetir();
+                KampanyaliUrunleriGetir();
+                BannerCek();
+                Getir();
                 /*KapmayaCek()*/;
             }
             
@@ -163,12 +166,45 @@ namespace HepsiBizde
         {
             DbConnection ConnectDatabaseti = new DbConnection();
             SqlConnection baglanti = ConnectDatabaseti.ConnectDatabase();
-            SqlCommand komut = new SqlCommand("select TOP(4)* from Urunler join Markalar on Markalar.MarkaId = Urunler.UrunMarkaId join Kategoriler on Kategoriler.KategoriId = Urunler.UrunKategoriId ", baglanti);
+            SqlCommand komut = new SqlCommand("select TOP(4)* from Urunler join Markalar on Markalar.MarkaId = Urunler.UrunMarkaId join Kategoriler on Kategoriler.KategoriId = Urunler.UrunKategoriId WHERE Urunler.UrünIndirimFiyat IS NULL order by Urunler.UrunId desc ", baglanti);
             SqlDataReader reader = komut.ExecuteReader();
             RepeaterUrunler.DataSource = reader;
             RepeaterUrunler.DataBind();
 
             baglanti.Close();
         }
+        protected void Getir()
+        {
+            DbConnection ConnectDatabaseti = new DbConnection();
+            SqlConnection baglanti = ConnectDatabaseti.ConnectDatabase();
+            SqlCommand komut = new SqlCommand("select TOP(2)* from Urunler join Markalar on Markalar.MarkaId = Urunler.UrunMarkaId join Kategoriler on Kategoriler.KategoriId = Urunler.UrunKategoriId WHERE Urunler.UrünIndirimFiyat IS NULL", baglanti);
+            SqlDataReader reader = komut.ExecuteReader();
+            Repeater3.DataSource = reader;
+            Repeater3.DataBind();
+            baglanti.Close();
+        }
+        protected void KampanyaliUrunleriGetir()
+        {
+            DbConnection ConnectDatabaseti = new DbConnection();
+            SqlConnection baglanti = ConnectDatabaseti.ConnectDatabase();
+            SqlCommand komut = new SqlCommand("select TOP(4)* from Urunler join Markalar on Markalar.MarkaId = Urunler.UrunMarkaId join Kategoriler on Kategoriler.KategoriId = Urunler.UrunKategoriId WHERE Urunler.UrünIndirimFiyat IS NOT NULL order by Urunler.UrunId desc ", baglanti);
+            SqlDataReader reader = komut.ExecuteReader();
+            Repeater1.DataSource = reader;
+            Repeater1.DataBind();
+
+            baglanti.Close();
+        }
+        protected void BannerCek()
+        {
+            DbConnection ConnectDatabaseti = new DbConnection();
+            SqlConnection baglanti = ConnectDatabaseti.ConnectDatabase();
+            SqlCommand komut = new SqlCommand("select TOP(1)* from Kampanyalar order by KampanyaId desc", baglanti);
+            SqlDataReader reader = komut.ExecuteReader();
+            Repeater2.DataSource = reader;
+            Repeater2.DataBind();
+
+            baglanti.Close();
+        }
+
     }
 }
