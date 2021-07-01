@@ -5,23 +5,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>BdElektrik E-Ticaret</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <link href="css/styles.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="css/DropDown.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
         <div id="page-content-wrapper">
             <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
                 <a href="Default.aspx">
-                    <img style="max-width: 180px" src="assets/logo.png" /></a>
+                    <img style="max-width: 180px" src="assets/logo.png" /></a> &emsp; &emsp;
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <asp:DropDownList ID="DropDownList1Urün" AutoPostBack="true" Width="300" OnSelectedIndexChanged="DropDownList1Urün_SelectedIndexChanged" CssClass="form-control container" BackColor="#f0f0f0" runat="server">
+                <asp:DropDownList ID="DropDownList1Urün" AutoPostBack="true" Width="300" OnSelectedIndexChanged="DropDownList1Urün_SelectedIndexChanged" CssClass="fa fa-circle dropbtn form-control container " runat="server">
                     <asp:ListItem Value="-1">Ürünler</asp:ListItem>
-                </asp:DropDownList>
-                <asp:Button ID="Kampanyalar" OnClick="Kampanyalar_Click" Width="300" CssClass="form-control container" BackColor="#f0f0f0" runat="server" Text="Kampanyalar" />
+                </asp:DropDownList> &emsp;
+                <asp:Button ID="Kampanyalar" OnClick="Kampanyalar_Click" Width="300" CssClass="dropbtn form-control " runat="server" ForeColor="Red" Text="Kampanyalar" />
                 <%--<asp:DropDownList ID="DropDownList2Kampanya" Width="300" autopostback="true" CssClass="form-control container" BackColor="#f0f0f0" runat="server">
                     <asp:ListItem Value="-1">Kampanyalar</asp:ListItem>
                 </asp:DropDownList>--%>
@@ -57,14 +58,46 @@
                     </ul>
                 </div>
             </nav>
-            <h2 style="background-color: lightgray" class="p-1 text-center">Kampanyalı Ürünler</h2>
-            <div class="row p-4 " style="background-color: lightgray">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="dosyalar/Slider/1.png" alt="1 slide"/>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="dosyalar/Slider/2.png" alt="2 slide"/>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="dosyalar/Slider/4.png" alt="3 slide"/>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="dosyalar/Slider/5.png" alt="4 slide"/>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <div class="DefaultBaslik">
+                <h2>Kampanyalı Ürünler</h2>
+            </div>
+            <div class="DefaultUrunler row p-4 ">
                 <asp:Repeater ID="Repeater1" runat="server">
                     <ItemTemplate>
-                        <div class="col-lg-3 col-md-4 col-sm-6 text-center">
-                            <div class="card" style="width: 340px; height: 500px !important">
+                        <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+                            <div class="card" style="width: 440px; height: 600px !important">
                                 <a href="Homepage.aspx?KategoriId=<%# Eval("KategoriId")%>">
-                                    <img style="width: 335px; height: 335px !important" src="<%# Eval("UrunResim")%>" class="card-img-top" />
+                                    <img style="width: 435px; height: 435px !important" src="<%# Eval("UrunResim")%>" class="card-img-top" />
                                 </a>
                                 <div class="card-body">
                                     <p class="card-text"><%# Eval("UrunAciklama")%></p>
@@ -77,27 +110,26 @@
                     </ItemTemplate>
                 </asp:Repeater>
             </div>
-            <br />
+            <div class="DefaultBaslik">
+            <h2>İndirim Fırsatları</h2>
+                </div>
             <div class="row text-center" style="background-color: aliceblue">
                 <asp:Repeater ID="Repeater2" runat="server">
                     <ItemTemplate>
                         <div class="col-lg-12 col-md-12 col-sm-12 text-black-50">
-                            <div class="bg-image hover-overlay ripple">
-                              <h2>  <p class="card-text"><%# Eval("KampanyaAd")%></p></h2>
+                            <div class="bg-image hover-overlay ripple">                                
                                 <img src="<%# Eval("KampanyaBanner")%>" style="max-width: 100%; height: auto" class="img-fluid" />
                             </div>
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>
             </div>
-            <br />
             <div class="row text-center">
                 <asp:Repeater ID="Repeater3" runat="server">
                     <ItemTemplate>
                         <div class="col-lg-6 col-md-12 col-sm-12">
                             <div class="bg-image hover-overlay ripple">
-                                <p class="card-text" style="background-color:burlywood"><%# Eval("UrunAciklama")%></p>
-                               <a href="Homepage.aspx?KategoriId=<%# Eval("KategoriId")%>">
+                                <a href="Homepage.aspx?KategoriId=<%# Eval("KategoriId")%>">
                                     <img style="width: 335px; height: 335px !important" src="<%# Eval("UrunResim")%>" class="card-img-top" />
                                 </a>
                             </div>
@@ -105,16 +137,16 @@
                     </ItemTemplate>
                 </asp:Repeater>
             </div>
-            <br />
-            
-            <h2 style="background-color: lightgray" class="p-1 text-center">Son Eklenen Ürünler</h2>
-            <div class="row p-4" style="background-color: lightgray">
+            <div class="DefaultBaslik">
+            <h2>Son Eklenen Ürünler</h2>
+                </div>
+            <div class="DefaultUrunler row p-4">
                 <asp:Repeater ID="RepeaterUrunler" runat="server">
                     <ItemTemplate>
                         <div class="col-lg-4 col-md-6 col-sm-12 text-center">
-                            <div class="card" style="width: 340px; height: 500px !important">
+                            <div class="card" style="width: 440px; height: 600px !important">
                                 <a href="Homepage.aspx?KategoriId=<%# Eval("KategoriId")%>">
-                                    <img style="width: 335px; height: 335px !important" src="<%# Eval("UrunResim")%>" class="card-img-top" />
+                                    <img style="width: 435px; height: 435px !important" src="<%# Eval("UrunResim")%>" class="card-img-top" />
                                 </a>
                                 <div class="card-body">
                                     <p class="card-text"><%# Eval("UrunAciklama")%></p>
@@ -127,10 +159,20 @@
                     </ItemTemplate>
                 </asp:Repeater>
             </div>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+                    <a href="https://wa.me/+905352808161?text=UrulerHakkindaBilgiAlmakIstiyorum" class="float" target="_blank">
+                        <i class="fa fa-whatsapp my-float"></i>
+                    </a>
         </div>
     </form>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="css/scripts.js"></script>
+    <script>
+        $('.carousel').carousel({
+            interval: 4000
+        })
+    </script>
+    <link href="css/widgets/WP.css" rel="stylesheet" />
 </body>
 </html>

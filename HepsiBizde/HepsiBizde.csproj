@@ -77,6 +77,7 @@
     <Content Include="assets\lock.png" />
     <Content Include="assets\logo.png" />
     <Content Include="css\bootstrap.css" />
+    <Content Include="css\DropDown.css" />
     <Content Include="css\pages\auth.css" />
     <Content Include="css\pages\chat.css" />
     <Content Include="css\pages\dripicons.css" />
@@ -98,7 +99,15 @@
     <Content Include="assets\js\pages\ui-chartjs.js" />
     <Content Include="assets\js\vendors.js" />
     <Content Include="assets\images\logo\logo.png" />
+    <Content Include="css\widgets\WP.css" />
     <Content Include="Default.aspx" />
+    <Content Include="dosyalar\Slider\041.jpg" />
+    <Content Include="dosyalar\Slider\042.jpg" />
+    <Content Include="dosyalar\Slider\043.jpg" />
+    <Content Include="dosyalar\Slider\1.png" />
+    <Content Include="dosyalar\Slider\2.png" />
+    <Content Include="dosyalar\Slider\4.png" />
+    <Content Include="dosyalar\Slider\5.png" />
     <Content Include="Login.aspx" />
     <Content Include="Web.config" />
     <Content Include="Homepage.aspx" />
@@ -211,9 +220,7 @@
     <Content Include="YönetimPaneli.aspx" />
     <Content Include="Yonetim.Master" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="dosyalar\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Proje.Business\Proje.Business.csproj">
       <Project>{dff48941-dbc8-46fa-8d6a-45c155069d56}</Project>
