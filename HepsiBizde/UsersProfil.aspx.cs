@@ -14,7 +14,8 @@ namespace HepsiBizde
             denemediv1.Visible = false;
             denemediv2.Visible = false;
             denemediv3.Visible = false;
-            
+
+
         }
         Proje.Business.Kullanicilar kullanicilarNesne = new Proje.Business.Kullanicilar();
         Proje.Business.Siparisler siparislerNesne = new Proje.Business.Siparisler();

@@ -13,12 +13,16 @@ namespace HepsiBizde
         static string kullaniciId;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                UrünCek();
+            }
             try
             {
                 kullaniciId = Session["userid"].ToString();
                 //SESSION ID BOŞ OLMAMASI DURUMUNDA UYE BİLGİLERİ GETİRİRS
                 Bring_Member();
+
                 
             }
             catch (Exception)
@@ -28,6 +32,31 @@ namespace HepsiBizde
             }
             //MENU VE SEPETTE BULUNAN ÜRÜNLERİ TEMİZLEME
             Listing();
+
+        }
+        private void UrünCek()
+        {
+            Proje.Business.Kategoriler kategorilerNesne = new Proje.Business.Kategoriler();
+
+            foreach (var item in kategorilerNesne.Listele())
+            {
+                var i = item.KategoriId;
+                string KatAdi = kategorilerNesne.KategoriCek(i).KategoriAd;
+                int Katid = kategorilerNesne.KategoriCek(i).KategoriId;
+                DropDownList1Urün.Items.Add(new ListItem(KatAdi, "Homepage.aspx?KategoriId=" + Katid.ToString()));
+            }
+        }
+        protected void DropDownList1Urün_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string a = DropDownList1Urün.SelectedItem.Value;
+            if (DropDownList1Urün.SelectedItem.Value == "-1")
+            {
+                Response.Redirect("Default.aspx");
+            }
+            else
+            {
+                Response.Redirect(a);
+            }
 
         }
         protected void giris_Click(object sender, EventArgs e)
@@ -63,16 +92,16 @@ namespace HepsiBizde
 
         
 
-        protected void List_Categories_On_Menu()
-        {
-            DbConnection DBBAGLANTI = new DbConnection(); SqlConnection conn_ = DBBAGLANTI.ConnectDatabase();
-            //vt baglantımızın bulundugu class nesnesi oluşturduj
-            SqlCommand SQLCOMMAND = new SqlCommand("Select * from Kategoriler ", conn_);
-            //kategorileri getirme sql kodu
-            SqlDataReader SQLDATAREADER = SQLCOMMAND.ExecuteReader(); Categories.DataSource =SQLDATAREADER;
-            //menülerimize readerimizi yükleyerek veri tabanında bulunan kategoriye  
-            Categories.DataBind();  conn_.Close();
-        }
+        //protected void List_Categories_On_Menu()
+        //{
+        //    DbConnection DBBAGLANTI = new DbConnection(); SqlConnection conn_ = DBBAGLANTI.ConnectDatabase();
+        //    //vt baglantımızın bulundugu class nesnesi oluşturduj
+        //    SqlCommand SQLCOMMAND = new SqlCommand("Select * from Kategoriler ", conn_);
+        //    //kategorileri getirme sql kodu
+        //    SqlDataReader SQLDATAREADER = SQLCOMMAND.ExecuteReader(); Categories.DataSource =SQLDATAREADER;
+        //    //menülerimize readerimizi yükleyerek veri tabanında bulunan kategoriye  
+        //    Categories.DataBind();  conn_.Close();
+        //}
 
         protected void SEpettekiUrunleriGetir()
         {
@@ -93,7 +122,7 @@ namespace HepsiBizde
 
         protected void Listing()
         {
-            List_Categories_On_Menu();
+            //List_Categories_On_Menu();
             SEpettekiUrunleriGetir();
 
         }

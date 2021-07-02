@@ -33,13 +33,13 @@ namespace HepsiBizde
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Categories control.
+        /// DropDownList1Urün control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Categories;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1Urün;
 
         /// <summary>
         /// Adsoyad control.
