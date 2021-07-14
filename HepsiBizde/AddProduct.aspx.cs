@@ -83,30 +83,34 @@ namespace HepsiBizde
         protected void UrunKaydedildi_Click(object sender, EventArgs e)
         {
             DbConnection ConnectDatabaseti = new DbConnection();
-            SqlConnection conn = ConnectDatabaseti.ConnectDatabase();
-            SqlCommand sqlkomudumuz = new SqlCommand("Insert into Urunler (UrunAd,UrunAciklama,UrunFiyat,UrunKategoriId,UrunMarkaId,UrünIndirimFiyat,UrünKampanyaId,UrunResim) VALUES('"
+            SqlConnection conn = ConnectDatabaseti.ConnectDatabase();            
+            SqlCommand sqlkomudumuz = new SqlCommand("Insert into Urunler (UrunAd,UrunAciklama,UrunFiyat,UrunKategoriId,UrunMarkaId,UrünKampanyaId,UrünIndirimFiyat,UrunResim) VALUES('"
                 + productname.Text + "','"
                 + productdesc.Text + "','" 
                 + Convert.ToDouble(productprice.Text) + "','"
                 + Convert.ToInt32(CategoryDropdown.SelectedItem.Value) + "','"
                 + Convert.ToInt32(BrandDropdown.SelectedItem.Value) + "','" 
                 + Convert.ToInt32(DropDownListKampanya.SelectedValue) + "','"
-                + Convert.ToDouble(discountedproductprice.Text) + "',@UrunResim)", conn); 
+                + Convert.ToDouble(discountedproductprice.Text) + "',@UrunResim)", conn);
 
+            if (DropDownListKampanya.SelectedValue == null)
+            {
+                sqlkomudumuz.Parameters.AddWithValue("@UrünKampanyaId", "");
+            }
             if (FileUpload1.HasFile)
             {
                 //fileuploadımız dosyaya sahipse 
-                if (FileUpload1.PostedFile.ContentLength < 102400)
-                {//ve dosya 10 mbden küçükse 
+                //if (FileUpload1.PostedFile.ContentLength < 1024000)
+                //{//ve dosya 10 mbden küçükse 
                     FileUpload1.SaveAs(Server.MapPath("~/dosyalar/") + FileUpload1.FileName);
                     sqlkomudumuz.Parameters.AddWithValue("@UrunResim", "dosyalar/" + FileUpload1.FileName);
                     //resim klasöre kaydedilir resminismi ise veritabanına yazılır
-                }
-                else
-                {
-                    //resim 10mb den büyük ise default resim atanır
-                    sqlkomudumuz.Parameters.AddWithValue("@UrunResim", "https://st3.depositphotos.com/23594922/31822/v/600/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg");
-                }
+                //}
+                //else
+                //{
+                //    //resim 10mb den büyük ise default resim atanır
+                //    sqlkomudumuz.Parameters.AddWithValue("@UrunResim", "https://st3.depositphotos.com/23594922/31822/v/600/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg");
+                //}
             }
             else
             {
@@ -259,17 +263,17 @@ namespace HepsiBizde
             //parametreler ile ürün kaydı
             if (FileUpload1.HasFile)
             {
-                if (FileUpload1.PostedFile.ContentLength < 102400)
-                {
+                //if (FileUpload1.PostedFile.ContentLength < 1024000)
+                //{
                     //fileuploadımızda bulunan resmin klasörde kaydedilmesi
                     FileUpload1.SaveAs(Server.MapPath("~/dosyalar/") + FileUpload1.FileName);
                     sqlkomutumuz.Parameters.AddWithValue("@UrunResim", "dosyalar/" + FileUpload1.FileName);
-                }
-                else
-                {
-                    //eger resim 10mbden büuük ise random resim atanması
-                    sqlkomutumuz.Parameters.AddWithValue("@UrunResim", "https://st3.depositphotos.com/23594922/31822/v/600/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg");
-                }
+                //}
+                //else
+                //{
+                //    //eger resim 10mbden büuük ise random resim atanması
+                //    sqlkomutumuz.Parameters.AddWithValue("@UrunResim", "https://st3.depositphotos.com/23594922/31822/v/600/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg");
+                //}
             }
             else
             {
@@ -291,17 +295,17 @@ namespace HepsiBizde
             if (KampanyaBanner.HasFile)
             {
                 //fileuploadımız dosyaya sahipse 
-                if (KampanyaBanner.PostedFile.ContentLength < 102400)
-                {//ve dosya 10 mbden küçükse 
+                //if (KampanyaBanner.PostedFile.ContentLength < 102400)
+                //{//ve dosya 10 mbden küçükse 
                     KampanyaBanner.SaveAs(Server.MapPath("~/dosyalar/") + KampanyaBanner.FileName);
                     a= "dosyalar/" + KampanyaBanner.FileName;
                     //resim klasöre kaydedilir resminismi ise veritabanına yazılır
-                }
-                else
-                {
-                    //resim 10mb den büyük ise default resim atanır
-                    a = "https://st3.depositphotos.com/23594922/31822/v/600/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg";
-                }
+                //}
+                //else
+                //{
+                //    //resim 10mb den büyük ise default resim atanır
+                //    a = "https://st3.depositphotos.com/23594922/31822/v/600/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg";
+                //}
             }
             else
             {

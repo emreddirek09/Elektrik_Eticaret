@@ -23,15 +23,27 @@ namespace Proje.Business
         }
         public Proje.DataAcces.Kampanyalar KategoriCek(int idd)
         {
-            Proje.DataAcces.bdelekti_ETicaretEntities ent = new DataAcces.bdelekti_ETicaretEntities();
             var sonuc = ent.Kampanyalar.Where(p => p.KampanyaId == idd);
             return sonuc.FirstOrDefault();
         }
         public List<Proje.DataAcces.Kampanyalar> Listele()
         {
-            Proje.DataAcces.bdelekti_ETicaretEntities ent = new DataAcces.bdelekti_ETicaretEntities();
             var sonuc = ent.Kampanyalar.ToList();
             return sonuc;
+        }
+
+        
+
+        public List<Proje.DataAcces.Urunler> KampanyaliUrünListele()
+        {
+
+            var serv = (from Urn in ent.Urunler
+                         join kamp in ent.Kampanyalar 
+                         on Urn.UrünKampanyaId equals kamp.KampanyaId 
+                        where Urn.UrünKampanyaId == kamp.KampanyaId
+                         select Urn).ToList();
+
+            return serv;
         }
     }
 }
