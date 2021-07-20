@@ -11,6 +11,9 @@ namespace HepsiBizde
     public partial class WebForm1 : System.Web.UI.Page
     {
         static string categoryId;
+
+        public string KampanyaId { get; private set; }
+
         static List<Sepet> urunadlari = new List<Sepet>();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -18,11 +21,11 @@ namespace HepsiBizde
             UrunKontrol();
         }
 
-        protected void UrunleriKategoriOlarakGetir(string cId)
+        protected void UrunleriKategoriOlarakGetir(string cId ,string kampid)
         {
             DbConnection conn = new DbConnection();
             SqlConnection baglanti = conn.ConnectDatabase();
-            SqlCommand command = new SqlCommand("select * from Urunler join Markalar on Markalar.MarkaId = Urunler.UrunMarkaId join Kategoriler on Kategoriler.KategoriId = Urunler.UrunKategoriId WHERE Urunler.UrunKategoriId='"+cId+"'", baglanti);
+            SqlCommand command = new SqlCommand("select * from Urunler join Markalar on Markalar.MarkaId = Urunler.UrunMarkaId join Kategoriler on Kategoriler.KategoriId = Urunler.UrunKategoriId WHERE Urunler.UrunKategoriId='"+cId+ "' && Urunler.UrünKampanyaId ='"+kampid+"'", baglanti);
 
             SqlDataReader okuyucu = command.ExecuteReader();
             ProductRepeater.DataSource = okuyucu;
@@ -84,6 +87,8 @@ namespace HepsiBizde
             try
             {
                 categoryId = Request.QueryString["KategoriId"].ToString();
+                KampanyaId = Request.QueryString["UrünKampanyaId"].ToString();
+                UrunleriKategoriOlarakGetir(categoryId, KampanyaId);
             }
             catch (Exception)
             {
@@ -107,7 +112,7 @@ namespace HepsiBizde
             else
             {
                 //categori ıd boş değilse kategoryie göre getiriri.
-                UrunleriKategoriOlarakGetir(categoryId);
+                UrunleriKategoriOlarakGetir(categoryId, KampanyaId);
             }
         }
 

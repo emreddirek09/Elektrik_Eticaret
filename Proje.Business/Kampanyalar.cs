@@ -26,6 +26,7 @@ namespace Proje.Business
             var sonuc = ent.Kampanyalar.Where(p => p.KampanyaId == idd);
             return sonuc.FirstOrDefault();
         }
+       
         public List<Proje.DataAcces.Kampanyalar> Listele()
         {
             var sonuc = ent.Kampanyalar.ToList();

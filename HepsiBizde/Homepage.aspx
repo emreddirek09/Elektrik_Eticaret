@@ -23,9 +23,7 @@
                                 <asp:LinkButton  CssClass="btn btn-warning mb-4" Text='Sepete Ekle' CommandName='<%# Eval("UrunAd")%>' OnClick="Unnamed_Click" CommandArgument='<%# Eval("UrunId")%>' runat="server" />
                             </div>
                     </div>
-
                 </div>
-
             </ItemTemplate>
         </asp:Repeater>
     </div>

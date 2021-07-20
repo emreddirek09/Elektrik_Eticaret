@@ -14,22 +14,23 @@ namespace HepsiBizde
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //DbConnection ConnectDatabaseti = new DbConnection();
-            //SqlConnection baglanti = ConnectDatabaseti.ConnectDatabase();
-            //SqlCommand komut = new SqlCommand("select * from Kampanyalar inner join Urunler ON Urunler.UrünKampanyaId = Kampanyalar.KampanyaId ", baglanti);
-            //SqlDataReader reader = komut.ExecuteReader();
-            //RepeaterKampanya.DataSource = reader;
-            //RepeaterKampanya.DataBind();
-           VeriCek();
+            DbConnection ConnectDatabaseti = new DbConnection();
+            SqlConnection baglanti = ConnectDatabaseti.ConnectDatabase();
+            SqlCommand komut = new SqlCommand("select * from Kampanyalar ", baglanti);
+            SqlDataReader reader = komut.ExecuteReader();
+            RepeaterKampanya.DataSource = reader;
+            RepeaterKampanya.DataBind();
+            //VeriCek();
         }
        
-        private void VeriCek()
-        {
-            Proje.Business.Kampanyalar kampanyalarNesne = new Proje.Business.Kampanyalar();
-            var liste = kampanyalarNesne.Listele();
-            RepeaterKampanya.DataSource = liste;
-            RepeaterKampanya.DataBind();
-        }
+        //private void VeriCek()
+        //{
+        //    Proje.Business.Kampanyalar kampanyalarNesne = new Proje.Business.Kampanyalar();
+        //    var liste = kampanyalarNesne.Listele();
+        //    RepeaterKampanya.DataSource = liste;
+        //    RepeaterKampanya.DataBind();
+        //}
+
         protected void login_ServerClick(object sender, EventArgs e)
         { 
             //Response.Redirect("Default.aspx");
@@ -45,7 +46,7 @@ namespace HepsiBizde
             //SqlCommand komut = new SqlCommand("select * from Kampanyalar inner join Urunler ON Urunler.UrünKampanyaId = Kampanyalar.KampanyaId where Urunler.UrünKampanyaId = 11 ", baglanti);
             //komut.Parameters.AddWithValue("@id",deger);
             //SqlDataReader reader = komut.ExecuteReader();
-            Response.Redirect("Homepage.aspx?UrünKampanyaId="+ deger);
+            Response.Redirect("Homepage.aspx?UrunKategoriId=" + deger + "&UrünKampanyaId=" + link.CommandName);
             //RepeaterKampanya.DataSource = reader;
             //RepeaterKampanya.DataBind();
             //reader.Close();
