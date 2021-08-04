@@ -11,7 +11,8 @@ namespace HepsiBizde
     public partial class WebForm2 : System.Web.UI.Page
     {
         static string productId;
-
+        private int? a = null ;
+        private int b ;
         Proje.Business.Kampanyalar kampanyalarNesne = new Proje.Business.Kampanyalar();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -82,6 +83,13 @@ namespace HepsiBizde
 
         protected void UrunKaydedildi_Click(object sender, EventArgs e)
         {
+            //Convert.ToDouble(discountedproductprice.Text) Convert.ToInt32(DropDownListKampanya.SelectedValue)
+            
+            b = Convert.ToInt32(productprice.Text);
+            string text = discountedproductprice.Text;
+           
+            
+
             DbConnection ConnectDatabaseti = new DbConnection();
             SqlConnection conn = ConnectDatabaseti.ConnectDatabase();            
             SqlCommand sqlkomudumuz = new SqlCommand("Insert into Urunler (UrunAd,UrunAciklama,UrunFiyat,UrunKategoriId,UrunMarkaId,UrünKampanyaId,UrünIndirimFiyat,UrunResim) VALUES('"
@@ -89,32 +97,36 @@ namespace HepsiBizde
                 + productdesc.Text + "','" 
                 + Convert.ToDouble(productprice.Text) + "','"
                 + Convert.ToInt32(CategoryDropdown.SelectedItem.Value) + "','"
-                + Convert.ToInt32(BrandDropdown.SelectedItem.Value) + "','" 
-                + Convert.ToInt32(DropDownListKampanya.SelectedValue) + "','"
-                + Convert.ToDouble(discountedproductprice.Text) + "',@UrunResim)", conn);
+                + Convert.ToInt32(BrandDropdown.SelectedItem.Value) + "',@KampanyaId,@UrünIndirimFiyat,@UrunResim)", conn);
 
-            if (DropDownListKampanya.SelectedValue == null)
+            if (DropDownListKampanya.SelectedValue == "-1")
             {
-                sqlkomudumuz.Parameters.AddWithValue("@UrünKampanyaId", "");
-            }
-            if (FileUpload1.HasFile)
-            {
-                //fileuploadımız dosyaya sahipse 
-                //if (FileUpload1.PostedFile.ContentLength < 1024000)
-                //{//ve dosya 10 mbden küçükse 
-                    FileUpload1.SaveAs(Server.MapPath("~/dosyalar/") + FileUpload1.FileName);
-                    sqlkomudumuz.Parameters.AddWithValue("@UrunResim", "dosyalar/" + FileUpload1.FileName);
-                    //resim klasöre kaydedilir resminismi ise veritabanına yazılır
-                //}
-                //else
-                //{
-                //    //resim 10mb den büyük ise default resim atanır
-                //    sqlkomudumuz.Parameters.AddWithValue("@UrunResim", "https://st3.depositphotos.com/23594922/31822/v/600/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg");
-                //}
+                sqlkomudumuz.Parameters.AddWithValue("@KampanyaId", -1);
             }
             else
             {
-                //resim yok ise default resim atanır
+                sqlkomudumuz.Parameters.AddWithValue("@KampanyaId", Convert.ToInt32(DropDownListKampanya.SelectedValue));
+            }
+
+
+
+            if (text == "")
+            {
+                sqlkomudumuz.Parameters.AddWithValue("@UrünIndirimFiyat", "");
+            } 
+            else
+            {
+                sqlkomudumuz.Parameters.AddWithValue("@UrünIndirimFiyat", Convert.ToInt32(discountedproductprice.Text));
+            }
+
+            if (FileUpload1.HasFile)
+            {
+            FileUpload1.SaveAs(Server.MapPath("~/dosyalar/") + FileUpload1.FileName);
+            sqlkomudumuz.Parameters.AddWithValue("@UrunResim", "dosyalar/" + FileUpload1.FileName);
+                    
+            }
+            else
+            {
                 sqlkomudumuz.Parameters.AddWithValue("@UrunResim", "https://st3.depositphotos.com/23594922/31822/v/600/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg");
             }
 

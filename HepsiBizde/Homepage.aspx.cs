@@ -25,7 +25,8 @@ namespace HepsiBizde
         {
             DbConnection conn = new DbConnection();
             SqlConnection baglanti = conn.ConnectDatabase();
-            SqlCommand command = new SqlCommand("select * from Urunler join Markalar on Markalar.MarkaId = Urunler.UrunMarkaId join Kategoriler on Kategoriler.KategoriId = Urunler.UrunKategoriId WHERE Urunler.UrunKategoriId='"+cId+ "' && Urunler.UrünKampanyaId ='"+kampid+"'", baglanti);
+            //SqlCommand command = new SqlCommand("select * from Urunler join Markalar on Markalar.MarkaId = Urunler.UrunMarkaId join Kategoriler on Kategoriler.KategoriId = Urunler.UrunKategoriId WHERE Urunler.UrunKategoriId='" + cId + "' && Urunler.UrünKampanyaId ='" + kampid + "'", baglanti);
+            SqlCommand command = new SqlCommand("select * from Urunler join Markalar on Markalar.MarkaId = Urunler.UrunMarkaId join Kategoriler on Kategoriler.KategoriId = Urunler.UrunKategoriId WHERE Urunler.UrunKategoriId='"+cId+ "'", baglanti);
 
             SqlDataReader okuyucu = command.ExecuteReader();
             ProductRepeater.DataSource = okuyucu;
