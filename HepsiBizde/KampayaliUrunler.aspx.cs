@@ -8,50 +8,39 @@ using System.Web.UI.WebControls;
 
 namespace HepsiBizde
 {
-    public partial class WebForm8 : System.Web.UI.Page
+    public partial class WebForm9 : System.Web.UI.Page
     {
-        private string deger;
+        private string categoryId;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            DbConnection ConnectDatabaseti = new DbConnection();
-            SqlConnection baglanti = ConnectDatabaseti.ConnectDatabase();
-            SqlCommand komut = new SqlCommand("select * from Kampanyalar ", baglanti);
-            SqlDataReader reader = komut.ExecuteReader();
-            RepeaterKampanya.DataSource = reader;
-            RepeaterKampanya.DataBind();
-            //VeriCek();
+            UrunKontrol();
         }
-       
-        //private void VeriCek()
-        //{
-        //    Proje.Business.Kampanyalar kampanyalarNesne = new Proje.Business.Kampanyalar();
-        //    var liste = kampanyalarNesne.Listele();
-        //    RepeaterKampanya.DataSource = liste;
-        //    RepeaterKampanya.DataBind();
-        //}
-
-        protected void login_ServerClick(object sender, EventArgs e)
-        { 
-            //Response.Redirect("Default.aspx");
-            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('" + "Hello" + "')", true);
-        }
-
-        protected void incele_Click(object sender, EventArgs e)
+        protected void UrunKontrol()
         {
-            DbConnection ConnectDatabaseti = new DbConnection();
-            SqlConnection baglanti = ConnectDatabaseti.ConnectDatabase();
-            LinkButton link = (LinkButton)sender;
-            deger = link.CommandArgument;
-            //SqlCommand komut = new SqlCommand("select * from Kampanyalar inner join Urunler ON Urunler.UrünKampanyaId = Kampanyalar.KampanyaId where Urunler.UrünKampanyaId = 11 ", baglanti);
-            //komut.Parameters.AddWithValue("@id",deger);
-            //SqlDataReader reader = komut.ExecuteReader();
-            Response.Redirect("Homepage.aspx?UrunKategoriId=" + deger + "&UrünKampanyaId=" + link.CommandName);
-            //RepeaterKampanya.DataSource = reader;
-            //RepeaterKampanya.DataBind();
-            //reader.Close();
-            baglanti.Close();
+            //try
+            //{
+                categoryId = Request.QueryString["UrünKampanyaId"].ToString();
+                //KampanyaId = Request.QueryString["UrünKampanyaId"].ToString();
+                UrunleriKategoriOlarakGetir(categoryId);
+            //}
+            //catch (Exception)
+            //{
+            //    throw;
+            //}
 
+        }
+        protected void UrunleriKategoriOlarakGetir(string cId)
+        {
+            DbConnection conn = new DbConnection();
+            SqlConnection baglanti = conn.ConnectDatabase();
+            //SqlCommand command = new SqlCommand("select * from Urunler join Markalar on Markalar.MarkaId = Urunler.UrunMarkaId join Kategoriler on Kategoriler.KategoriId = Urunler.UrunKategoriId WHERE Urunler.UrunKategoriId='" + cId + "' && Urunler.UrünKampanyaId ='" + kampid + "'", baglanti);
+            SqlCommand command = new SqlCommand("select * from Urunler join Markalar on Markalar.MarkaId = Urunler.UrunMarkaId join Kategoriler on Kategoriler.KategoriId = Urunler.UrunKategoriId WHERE Urunler.UrünKampanyaId='" + cId + "'", baglanti);
+
+            SqlDataReader okuyucu = command.ExecuteReader();
+            ProductRepeater.DataSource = okuyucu;
+            ProductRepeater.DataBind();
+            baglanti.Close();
         }
     }
 }

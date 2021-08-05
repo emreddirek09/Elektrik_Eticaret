@@ -19,7 +19,7 @@
                 <a href="Default.aspx">
                     <img style="max-width: 180px" src="assets/logo.png" /></a> &emsp; &emsp;
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <asp:DropDownList ID="DropDownList1Urün" AutoPostBack="true" Width="300" OnSelectedIndexChanged="DropDownList1Urün_SelectedIndexChanged" CssClass="fa fa-circle dropbtn form-control container " runat="server">
+                <asp:DropDownList ID="DropDownList1Urün" AutoPostBack="true" Width="300" OnSelectedIndexChanged="DropDownList1Urün_SelectedIndexChanged" CssClass="sdropbtn form-control container " runat="server">
                     <asp:ListItem Value="-1">Ürünler</asp:ListItem>
                 </asp:DropDownList> &emsp;
                 <asp:Button ID="Kampanyalar" OnClick="Kampanyalar_Click" Width="300" CssClass="dropbtn form-control " runat="server" ForeColor="Red" Text="Kampanyalar" />

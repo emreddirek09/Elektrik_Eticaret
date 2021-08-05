@@ -11,16 +11,16 @@ namespace HepsiBizde
 {
 
 
-    public partial class WebForm9
+    public partial class WebForm8
     {
 
         /// <summary>
-        /// ProductRepeater control.
+        /// Repeater Kampanya control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater ProductRepeater;
+        protected global::System.Web.UI.WebControls.Repeater RepeaterKampanya;
     }
 }

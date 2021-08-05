@@ -21,7 +21,7 @@ namespace HepsiBizde
             UrunKontrol();
         }
 
-        protected void UrunleriKategoriOlarakGetir(string cId ,string kampid)
+        protected void UrunleriKategoriOlarakGetir(string cId)
         {
             DbConnection conn = new DbConnection();
             SqlConnection baglanti = conn.ConnectDatabase();
@@ -83,13 +83,14 @@ namespace HepsiBizde
             Response.Redirect("homepage.aspx#"+ mybutton.CommandArgument);
 
         }
+
         protected void UrunKontrol()
         {
             try
             {
                 categoryId = Request.QueryString["KategoriId"].ToString();
-                KampanyaId = Request.QueryString["UrünKampanyaId"].ToString();
-                UrunleriKategoriOlarakGetir(categoryId, KampanyaId);
+                //KampanyaId = Request.QueryString["UrünKampanyaId"].ToString();
+                UrunleriKategoriOlarakGetir(categoryId);
             }
             catch (Exception)
             {
@@ -113,7 +114,7 @@ namespace HepsiBizde
             else
             {
                 //categori ıd boş değilse kategoryie göre getiriri.
-                UrunleriKategoriOlarakGetir(categoryId, KampanyaId);
+                UrunleriKategoriOlarakGetir(categoryId);
             }
         }
 

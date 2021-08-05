@@ -179,6 +179,13 @@
     <Compile Include="SiparisOnay.aspx.designer.cs">
       <DependentUpon>SiparisOnay.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Kampanyalar.aspx.cs">
+      <DependentUpon>Kampanyalar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Kampanyalar.aspx.designer.cs">
+      <DependentUpon>Kampanyalar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="KampayaliUrunler.aspx.cs">
       <DependentUpon>KampayaliUrunler.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -216,6 +223,7 @@
     <Content Include="OrderStatistics.aspx" />
     <Content Include="UsersProfil.aspx" />
     <Content Include="SiparisOnay.aspx" />
+    <Content Include="Kampanyalar.aspx" />
     <Content Include="KampayaliUrunler.aspx" />
     <Content Include="YönetimPaneli.aspx" />
     <Content Include="Yonetim.Master" />
