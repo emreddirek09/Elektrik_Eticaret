@@ -160,13 +160,13 @@ namespace HepsiBizde
 
         protected void Kampanyalar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("KampayaliUrunler.aspx");
+            Response.Redirect("Kampanyalar.aspx");
         }
         protected void UrunleriGetir()
         {
             DbConnection ConnectDatabaseti = new DbConnection();
             SqlConnection baglanti = ConnectDatabaseti.ConnectDatabase();
-            SqlCommand komut = new SqlCommand("select TOP(4)* from Urunler join Markalar on Markalar.MarkaId = Urunler.UrunMarkaId join Kategoriler on Kategoriler.KategoriId = Urunler.UrunKategoriId WHERE Urunler.UrünIndirimFiyat = 0 order by Urunler.UrunId desc ", baglanti);
+            SqlCommand komut = new SqlCommand("select TOP(8)* from Urunler join Markalar on Markalar.MarkaId = Urunler.UrunMarkaId join Kategoriler on Kategoriler.KategoriId = Urunler.UrunKategoriId WHERE Urunler.UrünIndirimFiyat = ''  order by Urunler.UrunId desc ", baglanti);
             SqlDataReader reader = komut.ExecuteReader();
             RepeaterUrunler.DataSource = reader;
             RepeaterUrunler.DataBind();
@@ -177,7 +177,7 @@ namespace HepsiBizde
         {
             DbConnection ConnectDatabaseti = new DbConnection();
             SqlConnection baglanti = ConnectDatabaseti.ConnectDatabase();
-            SqlCommand komut = new SqlCommand("select TOP(2)* from Urunler join Markalar on Markalar.MarkaId = Urunler.UrunMarkaId join Kategoriler on Kategoriler.KategoriId = Urunler.UrunKategoriId WHERE Urunler.UrünIndirimFiyat IS NULL", baglanti);
+            SqlCommand komut = new SqlCommand("select TOP(2)* from Urunler join Markalar on Markalar.MarkaId = Urunler.UrunMarkaId join Kategoriler on Kategoriler.KategoriId = Urunler.UrunKategoriId WHERE Urunler.UrünIndirimFiyat = '' ", baglanti);
             SqlDataReader reader = komut.ExecuteReader();
             Repeater3.DataSource = reader;
             Repeater3.DataBind();
@@ -187,7 +187,7 @@ namespace HepsiBizde
         {
             DbConnection ConnectDatabaseti = new DbConnection();
             SqlConnection baglanti = ConnectDatabaseti.ConnectDatabase();
-            SqlCommand komut = new SqlCommand("select TOP(4)* from Urunler join Markalar on Markalar.MarkaId = Urunler.UrunMarkaId join Kategoriler on Kategoriler.KategoriId = Urunler.UrunKategoriId WHERE Urunler.UrünIndirimFiyat != 0 order by Urunler.UrunId desc ", baglanti);
+            SqlCommand komut = new SqlCommand("select TOP(4)* from Urunler join Markalar on Markalar.MarkaId = Urunler.UrunMarkaId join Kategoriler on Kategoriler.KategoriId = Urunler.UrunKategoriId WHERE Urunler.UrünIndirimFiyat != ''  order by Urunler.UrunId desc ", baglanti);
             SqlDataReader reader = komut.ExecuteReader();
             Repeater1.DataSource = reader;
             Repeater1.DataBind();

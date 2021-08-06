@@ -80,14 +80,14 @@ namespace HepsiBizde
             productRepeater.DataBind();
             conn.Close();
         }
-
+        
         protected void UrunKaydedildi_Click(object sender, EventArgs e)
         {
             //Convert.ToDouble(discountedproductprice.Text) Convert.ToInt32(DropDownListKampanya.SelectedValue)
             
             b = Convert.ToInt32(productprice.Text);
             string text = discountedproductprice.Text;
-           
+
             
 
             DbConnection ConnectDatabaseti = new DbConnection();
@@ -110,13 +110,14 @@ namespace HepsiBizde
 
 
 
+
             if (text == "")
             {
                 sqlkomudumuz.Parameters.AddWithValue("@UrünIndirimFiyat", "");
             } 
             else
             {
-                sqlkomudumuz.Parameters.AddWithValue("@UrünIndirimFiyat", Convert.ToInt32(discountedproductprice.Text));
+                sqlkomudumuz.Parameters.AddWithValue("@UrünIndirimFiyat", discountedproductprice.Text);
             }
 
             if (FileUpload1.HasFile)
