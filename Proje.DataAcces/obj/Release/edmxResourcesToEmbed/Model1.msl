@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="bdelekti_E_TicaretModelStoreContainer" CdmEntityContainer="bdelekti_ETicaretEntities">
+    <EntitySetMapping Name="Kategoriler">
+      <EntityTypeMapping TypeName="bdelekti_E_TicaretModel.Kategoriler">
+        <MappingFragment StoreEntitySet="Kategoriler">
+          <ScalarProperty Name="KategoriId" ColumnName="KategoriId" />
+          <ScalarProperty Name="KategoriAd" ColumnName="KategoriAd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kullanicilar">
+      <EntityTypeMapping TypeName="bdelekti_E_TicaretModel.Kullanicilar">
+        <MappingFragment StoreEntitySet="Kullanicilar">
+          <ScalarProperty Name="KullaniciId" ColumnName="KullaniciId" />
+          <ScalarProperty Name="KullaniciAdSoyad" ColumnName="KullaniciAdSoyad" />
+          <ScalarProperty Name="KullaniciMail" ColumnName="KullaniciMail" />
+          <ScalarProperty Name="KullaniciSifre" ColumnName="KullaniciSifre" />
+          <ScalarProperty Name="KullanıcıTelefon" ColumnName="KullanıcıTelefon" />
+          <ScalarProperty Name="KullaniciAdres" ColumnName="KullaniciAdres" />
+          <ScalarProperty Name="KullaniciTur" ColumnName="KullaniciTur" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Markalar">
+      <EntityTypeMapping TypeName="bdelekti_E_TicaretModel.Markalar">
+        <MappingFragment StoreEntitySet="Markalar">
+          <ScalarProperty Name="MarkaId" ColumnName="MarkaId" />
+          <ScalarProperty Name="MarkaAdi" ColumnName="MarkaAdi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Siparisler">
+      <EntityTypeMapping TypeName="bdelekti_E_TicaretModel.Siparisler">
+        <MappingFragment StoreEntitySet="Siparisler">
+          <ScalarProperty Name="SiparisId" ColumnName="SiparisId" />
+          <ScalarProperty Name="SiparisMusteriId" ColumnName="SiparisMusteriId" />
+          <ScalarProperty Name="SiparisTarih" ColumnName="SiparisTarih" />
+          <ScalarProperty Name="SiparisFiyat" ColumnName="SiparisFiyat" />
+          <ScalarProperty Name="Urünler" ColumnName="Urünler" />
+          <ScalarProperty Name="OnayDurumu" ColumnName="OnayDurumu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Urunler">
+      <EntityTypeMapping TypeName="bdelekti_E_TicaretModel.Urunler">
+        <MappingFragment StoreEntitySet="Urunler">
+          <ScalarProperty Name="UrünKampanyaId" ColumnName="UrünKampanyaId" />
+          <ScalarProperty Name="UrünIndirimFiyat" ColumnName="UrünIndirimFiyat" />
+          <ScalarProperty Name="UrunId" ColumnName="UrunId" />
+          <ScalarProperty Name="UrunAd" ColumnName="UrunAd" />
+          <ScalarProperty Name="UrunAciklama" ColumnName="UrunAciklama" />
+          <ScalarProperty Name="UrunFiyat" ColumnName="UrunFiyat" />
+          <ScalarProperty Name="UrunKategoriId" ColumnName="UrunKategoriId" />
+          <ScalarProperty Name="UrunMarkaId" ColumnName="UrunMarkaId" />
+          <ScalarProperty Name="UrunResim" ColumnName="UrunResim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kampanyalar">
+      <EntityTypeMapping TypeName="bdelekti_E_TicaretModel.Kampanyalar">
+        <MappingFragment StoreEntitySet="Kampanyalar">
+          <ScalarProperty Name="KampanyaBanner" ColumnName="KampanyaBanner" />
+          <ScalarProperty Name="KampanyaAd" ColumnName="KampanyaAd" />
+          <ScalarProperty Name="KampanyaId" ColumnName="KampanyaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

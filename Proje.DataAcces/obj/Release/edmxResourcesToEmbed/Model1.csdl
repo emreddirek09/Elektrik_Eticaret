@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="bdelekti_E_TicaretModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Kategoriler">
+    <Key>
+      <PropertyRef Name="KategoriId" />
+    </Key>
+    <Property Name="KategoriId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KategoriAd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Kullanicilar">
+    <Key>
+      <PropertyRef Name="KullaniciId" />
+    </Key>
+    <Property Name="KullaniciId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KullaniciAdSoyad" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="KullaniciMail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="KullaniciSifre" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="KullanıcıTelefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="KullaniciAdres" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="KullaniciTur" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Markalar">
+    <Key>
+      <PropertyRef Name="MarkaId" />
+    </Key>
+    <Property Name="MarkaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MarkaAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Siparisler">
+    <Key>
+      <PropertyRef Name="SiparisId" />
+    </Key>
+    <Property Name="SiparisId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SiparisMusteriId" Type="Int32" />
+    <Property Name="SiparisTarih" Type="DateTime" Precision="3" />
+    <Property Name="SiparisFiyat" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Urünler" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OnayDurumu" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Urunler">
+    <Key>
+      <PropertyRef Name="UrunId" />
+    </Key>
+    <Property Name="UrunId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UrunAd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UrunAciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UrunFiyat" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="UrunKategoriId" Type="Int32" />
+    <Property Name="UrunMarkaId" Type="Int32" />
+    <Property Name="UrunResim" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UrünIndirimFiyat" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="UrünKampanyaId" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="bdelekti_ETicaretEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Kategoriler" EntityType="Self.Kategoriler" />
+    <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" />
+    <EntitySet Name="Markalar" EntityType="Self.Markalar" />
+    <EntitySet Name="Siparisler" EntityType="Self.Siparisler" />
+    <EntitySet Name="Urunler" EntityType="Self.Urunler" />
+    <EntitySet Name="Kampanyalar" EntityType="bdelekti_E_TicaretModel.Kampanyalar" />
+  </EntityContainer>
+  <EntityType Name="Kampanyalar">
+    <Key>
+      <PropertyRef Name="KampanyaId" />
+    </Key>
+    <Property Name="KampanyaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KampanyaAd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="KampanyaBanner" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

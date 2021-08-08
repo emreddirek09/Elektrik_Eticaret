@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="bdelekti_E_TicaretModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Kampanyalar">
+    <Key>
+      <PropertyRef Name="KampanyaId" />
+    </Key>
+    <Property Name="KampanyaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KampanyaAd" Type="nvarchar(max)" />
+    <Property Name="KampanyaBanner" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Kategoriler">
+    <Key>
+      <PropertyRef Name="KategoriId" />
+    </Key>
+    <Property Name="KategoriId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KategoriAd" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Kullanicilar">
+    <Key>
+      <PropertyRef Name="KullaniciId" />
+    </Key>
+    <Property Name="KullaniciId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KullaniciAdSoyad" Type="varchar(max)" />
+    <Property Name="KullaniciMail" Type="varchar" MaxLength="50" />
+    <Property Name="KullaniciSifre" Type="varchar(max)" />
+    <Property Name="KullanıcıTelefon" Type="varchar" MaxLength="50" />
+    <Property Name="KullaniciAdres" Type="varchar(max)" />
+    <Property Name="KullaniciTur" Type="int" />
+  </EntityType>
+  <EntityType Name="Markalar">
+    <Key>
+      <PropertyRef Name="MarkaId" />
+    </Key>
+    <Property Name="MarkaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MarkaAdi" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Siparisler">
+    <Key>
+      <PropertyRef Name="SiparisId" />
+    </Key>
+    <Property Name="SiparisId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SiparisMusteriId" Type="int" />
+    <Property Name="SiparisTarih" Type="datetime" />
+    <Property Name="SiparisFiyat" Type="money" />
+    <Property Name="Urünler" Type="nvarchar(max)" />
+    <Property Name="OnayDurumu" Type="bit" />
+  </EntityType>
+  <EntityType Name="Urunler">
+    <Key>
+      <PropertyRef Name="UrunId" />
+    </Key>
+    <Property Name="UrunId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UrunAd" Type="varchar" MaxLength="50" />
+    <Property Name="UrunAciklama" Type="varchar(max)" />
+    <Property Name="UrunFiyat" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="UrunKategoriId" Type="int" />
+    <Property Name="UrunMarkaId" Type="int" />
+    <Property Name="UrunResim" Type="varchar(max)" />
+    <Property Name="UrünIndirimFiyat" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="UrünKampanyaId" Type="int" />
+  </EntityType>
+  <EntityContainer Name="bdelekti_E_TicaretModelStoreContainer">
+    <EntitySet Name="Kampanyalar" EntityType="Self.Kampanyalar" Schema="bdelekti_Emre" store:Type="Tables" />
+    <EntitySet Name="Kategoriler" EntityType="Self.Kategoriler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Markalar" EntityType="Self.Markalar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Siparisler" EntityType="Self.Siparisler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Urunler" EntityType="Self.Urunler" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

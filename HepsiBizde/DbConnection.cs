@@ -11,7 +11,8 @@ namespace HepsiBizde
     {
         public SqlConnection ConnectDatabase()
         {
-            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Baglanti"].ToString());
+            SqlConnection conn = new SqlConnection(@"Data Source=89.252.181.210\MSSQLSERVER2019; Initial Catalog=bdelekti_E_Ticaret; User ID=bdelekti_Emre; Password=wn!zV099");
+            //SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Baglanti"].ToString());
             conn.Open();
             return conn;
         }

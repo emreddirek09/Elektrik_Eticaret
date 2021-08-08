@@ -1,0 +1,108 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="User.master.cs" Inherits="HepsiBizde.User" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>BdElektrik E-Ticaret</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="css/DropDown.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div class="d-flex" id="wrapper">
+            <%--<div class="bg-light border-right" id="sidebar-wrapper">
+                <div style="background-color: #ebeaf4!important; height: 57px !important;"
+                    class="sidebar-heading">
+                    <a href="Default.aspx">
+                        <img style="max-width: 180px" src="assets/logo.png" /></a>
+                </div>
+                <div class="list-group list-group-flush">
+                    <asp:Repeater ID="Categories" runat="server">
+                        <ItemTemplate>
+                            <a href='Homepage.aspx?KategoriId=<%# Eval("KategoriId")%>' class="list-group-item list-group-item-action bg-light"><%# Eval("KategoriAd")%></a>
+                        </ItemTemplate>
+                    </asp:Repeater>
+
+                </div>
+            </div>--%>
+            <div id="page-content-wrapper">
+
+                <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+
+                    <div style="background-color: #ebeaf4!important;"
+                        class="sidebar-heading">
+                        <a href="Default.aspx">
+                            <img style="max-width: 180px" src="assets/logo.png" /></a>
+                    </div>
+                     &emsp;
+                    <asp:DropDownList ID="DropDownList1Urün" AutoPostBack="true" Width="300" OnSelectedIndexChanged="DropDownList1Urün_SelectedIndexChanged" CssClass="fa fa-circle dropbtn form-control container " runat="server">
+                            <asp:ListItem Value="-1">Ürünler</asp:ListItem>
+                        </asp:DropDownList> &emsp;
+
+                    <%--<button class="btn btn-primary" id="menu-toggle">
+                        <span>*</span>
+                    </button>--%>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class=" collapse navbar-collapse" id="navbarSupportedContent">
+                        &emsp;
+                        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" id="navbarDropdown1" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <asp:Label Text="Hoşgeldiniz " ID="Adsoyad" runat="server" /></a>
+                                <div runat="server" id="cikisbutton" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown1">
+                                    <a href="UsersProfil.aspx" class="dropdown-item bg-light">Profil</a>
+                                    <asp:Button Text="Giriş" ID="giris" OnClick="giris_Click" class="dropdown-item bg-light" runat="server" />
+                                    <asp:Button Text="Çıkış" OnClick="logout" class="dropdown-item bg-light" runat="server" />
+                                </div>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link " id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-shopping-bag" style="color: red; font-size: x-large"><sup>
+                                        <asp:Label ID="sup" runat="server"></asp:Label></sup></i>
+
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <asp:Repeater ID="basketlist" runat="server">
+                                        <ItemTemplate>
+                                            <a class="dropdown-item bg-light" href="#">
+                                                <%# Eval("Name")%></a>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                    <asp:Button class="dropdown-item bg-success text-white" OnClick="Unnamed_Click" Text="Ödeme Yap" runat="server" />
+                                    <asp:Button class="dropdown-item bg-danger text-white" OnClick="Unnamed_Click1" Text="Sepeti Temizle" runat="server" />
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Login.aspx"><i class="fa  fa-unlock-alt" style="color: cornflowerblue; font-size: x-large"></i></a>
+
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="container-fluid p-4">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+                    <a href="https://api.whatsapp.com/send?phone=5352808161&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="float" target="_blank">
+                        <i class="fa fa-whatsapp my-float"></i>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </form>
+    <link href="css/widgets/WP.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="css/scripts.js"></script>
+</body>
+</html>

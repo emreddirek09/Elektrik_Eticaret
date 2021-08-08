@@ -35,17 +35,18 @@
             </div>--%>
             <div id="page-content-wrapper">
 
-                <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom ">
 
                     <div style="background-color: #ebeaf4!important;"
                         class="sidebar-heading">
                         <a href="Default.aspx">
                             <img style="max-width: 180px" src="assets/logo.png" /></a>
                     </div>
-                     &emsp;
+                    &emsp;
                     <asp:DropDownList ID="DropDownList1Urün" AutoPostBack="true" Width="300" OnSelectedIndexChanged="DropDownList1Urün_SelectedIndexChanged" CssClass="fa fa-circle dropbtn form-control container " runat="server">
-                            <asp:ListItem Value="-1">Ürünler</asp:ListItem>
-                        </asp:DropDownList> &emsp;
+                        <asp:ListItem Value="-1">Ürünler</asp:ListItem>
+                    </asp:DropDownList>
+                    &emsp;
 
                     <%--<button class="btn btn-primary" id="menu-toggle">
                         <span>*</span>
@@ -100,9 +101,38 @@
             </div>
         </div>
     </form>
+    <section class="">
+        <!-- Footer -->
+        <footer class="text-center text-white" style="background-color: #0a4275;">
+            <div class="container p-4 pb-0">
+                <!-- Section: CTA -->
+                <section class="">
+                    
+                    <p class="d-flex justify-content-center align-items-center">
+                        <span class="me-3">Register for free</span>
+                        <button type="button" class="btn btn-outline-light btn-rounded">
+                            Sign up!
+                        </button>
+                    </p>
+                </section>
+                <!-- Section: CTA -->
+            </div>
+            <!-- Grid container -->
+
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2020 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+    </section>
+
     <link href="css/widgets/WP.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="css/scripts.js"></script>
+
 </body>
 </html>

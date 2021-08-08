@@ -1,0 +1,20 @@
+﻿.dropbtn {
+    color: white;
+    font-size: 20px;
+    padding:1px;
+    text-align-last:center;
+    color: maroon;
+    border:groove;
+    cursor:pointer;
+}
+.DefaultBaslik{
+    background-color:lightcyan;
+    text-align-last:center;
+    color:crimson;
+    padding:10px;  
+    width:auto;
+}
+.DefaultUrunler {
+    background-color: aliceblue;
+}
+

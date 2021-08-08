@@ -13,6 +13,8 @@ namespace HepsiBizde
         static string kullaniciId;
         protected void Page_Load(object sender, EventArgs e)
         {
+            denemediv1.Visible = false;
+
             if (!IsPostBack)
             {
                 UrünCek();
@@ -166,7 +168,7 @@ namespace HepsiBizde
         {
             DbConnection ConnectDatabaseti = new DbConnection();
             SqlConnection baglanti = ConnectDatabaseti.ConnectDatabase();
-            SqlCommand komut = new SqlCommand("select TOP(8)* from Urunler join Markalar on Markalar.MarkaId = Urunler.UrunMarkaId join Kategoriler on Kategoriler.KategoriId = Urunler.UrunKategoriId WHERE Urunler.UrünIndirimFiyat = ''  order by Urunler.UrunId desc ", baglanti);
+            SqlCommand komut = new SqlCommand("select TOP(12)* from Urunler join Markalar on Markalar.MarkaId = Urunler.UrunMarkaId join Kategoriler on Kategoriler.KategoriId = Urunler.UrunKategoriId WHERE Urunler.UrünIndirimFiyat = ''  order by Urunler.UrunId desc ", baglanti);
             SqlDataReader reader = komut.ExecuteReader();
             RepeaterUrunler.DataSource = reader;
             RepeaterUrunler.DataBind();
@@ -177,7 +179,7 @@ namespace HepsiBizde
         {
             DbConnection ConnectDatabaseti = new DbConnection();
             SqlConnection baglanti = ConnectDatabaseti.ConnectDatabase();
-            SqlCommand komut = new SqlCommand("select TOP(2)* from Urunler join Markalar on Markalar.MarkaId = Urunler.UrunMarkaId join Kategoriler on Kategoriler.KategoriId = Urunler.UrunKategoriId WHERE Urunler.UrünIndirimFiyat = '' ", baglanti);
+            SqlCommand komut = new SqlCommand("select TOP(3)* from Urunler join Markalar on Markalar.MarkaId = Urunler.UrunMarkaId join Kategoriler on Kategoriler.KategoriId = Urunler.UrunKategoriId WHERE Urunler.UrünIndirimFiyat = '' ", baglanti);
             SqlDataReader reader = komut.ExecuteReader();
             Repeater3.DataSource = reader;
             Repeater3.DataBind();
@@ -206,5 +208,9 @@ namespace HepsiBizde
             baglanti.Close();
         }
 
+        protected void BtnSerach_Click(object sender, EventArgs e)
+        {
+            denemediv1.Visible = true;
+        }
     }
 }
