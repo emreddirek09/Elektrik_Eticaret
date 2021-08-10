@@ -1,6 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="bdelekti_E_TicaretModelStoreContainer" CdmEntityContainer="bdelekti_ETicaretEntities">
+  <EntityContainerMapping StorageEntityContainer="bdelekti_E_TicaretModelStoreContainer" CdmEntityContainer="bdelekti_E_TicaretEntities1">
+    <EntitySetMapping Name="Kampanyalar">
+      <EntityTypeMapping TypeName="bdelekti_E_TicaretModel.Kampanyalar">
+        <MappingFragment StoreEntitySet="Kampanyalar">
+          <ScalarProperty Name="KampanyaId" ColumnName="KampanyaId" />
+          <ScalarProperty Name="KampanyaAd" ColumnName="KampanyaAd" />
+          <ScalarProperty Name="KampanyaBanner" ColumnName="KampanyaBanner" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Kategoriler">
       <EntityTypeMapping TypeName="bdelekti_E_TicaretModel.Kategoriler">
         <MappingFragment StoreEntitySet="Kategoriler">
@@ -45,8 +54,6 @@
     <EntitySetMapping Name="Urunler">
       <EntityTypeMapping TypeName="bdelekti_E_TicaretModel.Urunler">
         <MappingFragment StoreEntitySet="Urunler">
-          <ScalarProperty Name="UrünKampanyaId" ColumnName="UrünKampanyaId" />
-          <ScalarProperty Name="UrünIndirimFiyat" ColumnName="UrünIndirimFiyat" />
           <ScalarProperty Name="UrunId" ColumnName="UrunId" />
           <ScalarProperty Name="UrunAd" ColumnName="UrunAd" />
           <ScalarProperty Name="UrunAciklama" ColumnName="UrunAciklama" />
@@ -54,15 +61,8 @@
           <ScalarProperty Name="UrunKategoriId" ColumnName="UrunKategoriId" />
           <ScalarProperty Name="UrunMarkaId" ColumnName="UrunMarkaId" />
           <ScalarProperty Name="UrunResim" ColumnName="UrunResim" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Kampanyalar">
-      <EntityTypeMapping TypeName="bdelekti_E_TicaretModel.Kampanyalar">
-        <MappingFragment StoreEntitySet="Kampanyalar">
-          <ScalarProperty Name="KampanyaBanner" ColumnName="KampanyaBanner" />
-          <ScalarProperty Name="KampanyaAd" ColumnName="KampanyaAd" />
-          <ScalarProperty Name="KampanyaId" ColumnName="KampanyaId" />
+          <ScalarProperty Name="UrunIndirimFiyat" ColumnName="UrunIndirimFiyat" />
+          <ScalarProperty Name="UrunKampanyaId" ColumnName="UrunKampanyaId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

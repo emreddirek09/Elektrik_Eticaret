@@ -13,10 +13,10 @@ namespace Proje.DataAcces
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class bdelekti_ETicaretEntities : DbContext
+    public partial class bdelekti_E_TicaretEntities1 : DbContext
     {
-        public bdelekti_ETicaretEntities()
-            : base("name=bdelekti_ETicaretEntities")
+        public bdelekti_E_TicaretEntities1()
+            : base("name=bdelekti_E_TicaretEntities1")
         {
         }
     
@@ -25,11 +25,11 @@ namespace Proje.DataAcces
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Kampanyalar> Kampanyalar { get; set; }
         public virtual DbSet<Kategoriler> Kategoriler { get; set; }
         public virtual DbSet<Kullanicilar> Kullanicilar { get; set; }
         public virtual DbSet<Markalar> Markalar { get; set; }
         public virtual DbSet<Siparisler> Siparisler { get; set; }
         public virtual DbSet<Urunler> Urunler { get; set; }
-        public virtual DbSet<Kampanyalar> Kampanyalar { get; set; }
     }
 }

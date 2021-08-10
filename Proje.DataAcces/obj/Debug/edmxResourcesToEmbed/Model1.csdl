@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="bdelekti_E_TicaretModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Kampanyalar">
+    <Key>
+      <PropertyRef Name="KampanyaId" />
+    </Key>
+    <Property Name="KampanyaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KampanyaAd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="KampanyaBanner" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
   <EntityType Name="Kategoriler">
     <Key>
       <PropertyRef Name="KategoriId" />
@@ -48,23 +56,15 @@
     <Property Name="UrunKategoriId" Type="Int32" />
     <Property Name="UrunMarkaId" Type="Int32" />
     <Property Name="UrunResim" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="UrünIndirimFiyat" Type="Decimal" Precision="18" Scale="0" />
-    <Property Name="UrünKampanyaId" Type="Int32" />
+    <Property Name="UrunIndirimFiyat" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UrunKampanyaId" Type="Int32" />
   </EntityType>
-  <EntityContainer Name="bdelekti_ETicaretEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="bdelekti_E_TicaretEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Kampanyalar" EntityType="Self.Kampanyalar" />
     <EntitySet Name="Kategoriler" EntityType="Self.Kategoriler" />
     <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" />
     <EntitySet Name="Markalar" EntityType="Self.Markalar" />
     <EntitySet Name="Siparisler" EntityType="Self.Siparisler" />
     <EntitySet Name="Urunler" EntityType="Self.Urunler" />
-    <EntitySet Name="Kampanyalar" EntityType="bdelekti_E_TicaretModel.Kampanyalar" />
   </EntityContainer>
-  <EntityType Name="Kampanyalar">
-    <Key>
-      <PropertyRef Name="KampanyaId" />
-    </Key>
-    <Property Name="KampanyaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="KampanyaAd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="KampanyaBanner" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-  </EntityType>
 </Schema>

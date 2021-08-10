@@ -8,7 +8,7 @@ namespace Proje.Business
 {
     public class Kullanicilar
     {
-        Proje.DataAcces.bdelekti_ETicaretEntities ent = new DataAcces.bdelekti_ETicaretEntities();
+        Proje.DataAcces.bdelekti_E_TicaretEntities1 ent = new DataAcces.bdelekti_E_TicaretEntities1();
         public Proje.DataAcces.Kullanicilar GirisYapanKullanici(int idd)
         {
             

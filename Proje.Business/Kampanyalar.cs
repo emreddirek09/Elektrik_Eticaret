@@ -11,7 +11,7 @@ namespace Proje.Business
         string KampanyaAd { get; set; }
 
         Proje.DataAcces.Kampanyalar kampanyalarEnt = new DataAcces.Kampanyalar();
-        Proje.DataAcces.bdelekti_ETicaretEntities ent = new DataAcces.bdelekti_ETicaretEntities();
+        Proje.DataAcces.bdelekti_E_TicaretEntities1 ent = new DataAcces.bdelekti_E_TicaretEntities1();
 
         public string KampanyaEkle(string veri, string a)
         {
@@ -40,8 +40,8 @@ namespace Proje.Business
 
             var serv = (from Urn in ent.Urunler
                          join kamp in ent.Kampanyalar 
-                         on Urn.UrünKampanyaId equals kamp.KampanyaId 
-                        where Urn.UrünKampanyaId == kamp.KampanyaId
+                         on Urn.UrunKampanyaId equals kamp.KampanyaId 
+                         where Urn.UrunKampanyaId == kamp.KampanyaId
                          select Urn).ToList();
 
             return serv;

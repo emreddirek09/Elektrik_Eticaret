@@ -9,7 +9,7 @@ namespace Proje.Business
     public class Siparisler
     {
         public string Urünler { get; set; }
-        Proje.DataAcces.bdelekti_ETicaretEntities ent = new DataAcces.bdelekti_ETicaretEntities();
+        Proje.DataAcces.bdelekti_E_TicaretEntities1 ent = new DataAcces.bdelekti_E_TicaretEntities1();
 
         
         public List<Proje.DataAcces.Siparisler> Listele(int MüsID)

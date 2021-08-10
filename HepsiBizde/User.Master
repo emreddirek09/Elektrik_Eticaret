@@ -48,9 +48,6 @@
                     </asp:DropDownList>
                     &emsp;
 
-                    <%--<button class="btn btn-primary" id="menu-toggle">
-                        <span>*</span>
-                    </button>--%>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class=" collapse navbar-collapse" id="navbarSupportedContent">
                         &emsp;
@@ -89,14 +86,13 @@
                         </ul>
                     </div>
                 </nav>
-                <div class="container-fluid p-4">
+                <div class="container p-4">
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                     </asp:ContentPlaceHolder>
                     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
                     <a href="https://api.whatsapp.com/send?phone=5352808161&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="float" target="_blank">
                         <i class="fa fa-whatsapp my-float"></i>
                     </a>
-
                 </div>
             </div>
         </div>
@@ -104,10 +100,10 @@
     <section class="">
         <!-- Footer -->
         <footer class="text-center text-white" style="background-color: #0a4275;">
-            <div class="container p-4 pb-0">
+            <!-- Grid container -->
+            <%--<div class="container p-4 pb-0">
                 <!-- Section: CTA -->
                 <section class="">
-                    
                     <p class="d-flex justify-content-center align-items-center">
                         <span class="me-3">Register for free</span>
                         <button type="button" class="btn btn-outline-light btn-rounded">
@@ -116,17 +112,54 @@
                     </p>
                 </section>
                 <!-- Section: CTA -->
-            </div>
-            <!-- Grid container -->
+            </div>--%>
+            <div class="container p-4">
+                <!--Grid row-->
+                <div class="row">
+                    <!--Grid column-->
+                    <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Buradayız..</h5>
 
-            <!-- Copyright -->
-            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-                © 2020 Copyright:
-      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+                        <p class="fa fa-address-card">
+                            Muğla Sıtkı Koçman Üniversitesi
+                        </p>
+                        <br />
+                        <p class="fa fa-mail-forward">
+                            info@bdelektrik.site
+                        </p>
+                        <br />
+                        <p class="fa fa-phone">
+                            05352808161
+                        </p>
+
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Kurumsal</h5>
+
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a href="Default.aspx" class="text-white">Giriş</a>
+                            </li>
+                            <li>
+                                <a href="Homepage.aspx" class="text-white">Ana Sayfa</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase mb-0">Kampanyalar</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="Kampanyalar.aspx" class="text-white">Yeni Ürünler</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2021 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/">Emre Direk</a>
+            </div>
         </footer>
-        <!-- Footer -->
     </section>
 
     <link href="css/widgets/WP.css" rel="stylesheet" />

@@ -168,7 +168,7 @@ namespace HepsiBizde
         {
             DbConnection ConnectDatabaseti = new DbConnection();
             SqlConnection baglanti = ConnectDatabaseti.ConnectDatabase();
-            SqlCommand komut = new SqlCommand("select TOP(12)* from Urunler join Markalar on Markalar.MarkaId = Urunler.UrunMarkaId join Kategoriler on Kategoriler.KategoriId = Urunler.UrunKategoriId WHERE Urunler.UrünIndirimFiyat = ''  order by Urunler.UrunId desc ", baglanti);
+            SqlCommand komut = new SqlCommand("select TOP(12)* from Urunler join Markalar on Markalar.MarkaId = Urunler.UrunMarkaId join Kategoriler on Kategoriler.KategoriId = Urunler.UrunKategoriId WHERE Urunler.UrunIndirimFiyat = ''  order by Urunler.UrunId desc ", baglanti);
             SqlDataReader reader = komut.ExecuteReader();
             RepeaterUrunler.DataSource = reader;
             RepeaterUrunler.DataBind();
@@ -179,7 +179,7 @@ namespace HepsiBizde
         {
             DbConnection ConnectDatabaseti = new DbConnection();
             SqlConnection baglanti = ConnectDatabaseti.ConnectDatabase();
-            SqlCommand komut = new SqlCommand("select TOP(3)* from Urunler join Markalar on Markalar.MarkaId = Urunler.UrunMarkaId join Kategoriler on Kategoriler.KategoriId = Urunler.UrunKategoriId WHERE Urunler.UrünIndirimFiyat = '' ", baglanti);
+            SqlCommand komut = new SqlCommand("select TOP(3)* from Urunler join Markalar on Markalar.MarkaId = Urunler.UrunMarkaId join Kategoriler on Kategoriler.KategoriId = Urunler.UrunKategoriId WHERE Urunler.UrunIndirimFiyat = '' ", baglanti);
             SqlDataReader reader = komut.ExecuteReader();
             Repeater3.DataSource = reader;
             Repeater3.DataBind();
@@ -189,7 +189,7 @@ namespace HepsiBizde
         {
             DbConnection ConnectDatabaseti = new DbConnection();
             SqlConnection baglanti = ConnectDatabaseti.ConnectDatabase();
-            SqlCommand komut = new SqlCommand("select TOP(4)* from Urunler join Markalar on Markalar.MarkaId = Urunler.UrunMarkaId join Kategoriler on Kategoriler.KategoriId = Urunler.UrunKategoriId WHERE Urunler.UrünIndirimFiyat != ''  order by Urunler.UrunId desc ", baglanti);
+            SqlCommand komut = new SqlCommand("select TOP(4)* from Urunler join Markalar on Markalar.MarkaId = Urunler.UrunMarkaId join Kategoriler on Kategoriler.KategoriId = Urunler.UrunKategoriId WHERE Urunler.UrunIndirimFiyat != ''  order by Urunler.UrunId desc ", baglanti);
             SqlDataReader reader = komut.ExecuteReader();
             Repeater1.DataSource = reader;
             Repeater1.DataBind();
@@ -211,6 +211,18 @@ namespace HepsiBizde
         protected void BtnSerach_Click(object sender, EventArgs e)
         {
             denemediv1.Visible = true;
+
+        }
+
+        protected void Btn_Ara_Click(object sender, EventArgs e)
+        {
+            HepsiBizde.Services.WebService1 webservis = new Services.WebService1();
+            string text = TxtSearch.Text;
+            var a = webservis.SearchFonksiyon(text);
+           
+            Response.Redirect("Search.aspx?UrunAd=" + text );
+            
+            
         }
     }
 }

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="bdelekti_E_TicaretModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="bdelekti_E_TicaretModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Kampanyalar">
           <Key>
             <PropertyRef Name="KampanyaId" />
@@ -61,8 +61,8 @@
           <Property Name="UrunKategoriId" Type="int" />
           <Property Name="UrunMarkaId" Type="int" />
           <Property Name="UrunResim" Type="varchar(max)" />
-          <Property Name="UrünIndirimFiyat" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="UrünKampanyaId" Type="int" />
+          <Property Name="UrunIndirimFiyat" Type="varchar(max)" />
+          <Property Name="UrunKampanyaId" Type="int" />
         </EntityType>
         <EntityContainer Name="bdelekti_E_TicaretModelStoreContainer">
           <EntitySet Name="Kampanyalar" EntityType="Self.Kampanyalar" Schema="bdelekti_Emre" store:Type="Tables" />
@@ -72,10 +72,19 @@
           <EntitySet Name="Siparisler" EntityType="Self.Siparisler" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Urunler" EntityType="Self.Urunler" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="bdelekti_E_TicaretModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Kampanyalar">
+          <Key>
+            <PropertyRef Name="KampanyaId" />
+          </Key>
+          <Property Name="KampanyaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KampanyaAd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="KampanyaBanner" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="Kategoriler">
           <Key>
             <PropertyRef Name="KategoriId" />
@@ -124,31 +133,32 @@
           <Property Name="UrunKategoriId" Type="Int32" />
           <Property Name="UrunMarkaId" Type="Int32" />
           <Property Name="UrunResim" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="UrünIndirimFiyat" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="UrünKampanyaId" Type="Int32" />
+          <Property Name="UrunIndirimFiyat" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UrunKampanyaId" Type="Int32" />
         </EntityType>
-        <EntityContainer Name="bdelekti_ETicaretEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="bdelekti_E_TicaretEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Kampanyalar" EntityType="Self.Kampanyalar" />
           <EntitySet Name="Kategoriler" EntityType="Self.Kategoriler" />
           <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" />
           <EntitySet Name="Markalar" EntityType="Self.Markalar" />
           <EntitySet Name="Siparisler" EntityType="Self.Siparisler" />
           <EntitySet Name="Urunler" EntityType="Self.Urunler" />
-          <EntitySet Name="Kampanyalar" EntityType="bdelekti_E_TicaretModel.Kampanyalar" />
         </EntityContainer>
-        <EntityType Name="Kampanyalar">
-          <Key>
-            <PropertyRef Name="KampanyaId" />
-          </Key>
-          <Property Name="KampanyaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="KampanyaAd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="KampanyaBanner" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="bdelekti_E_TicaretModelStoreContainer" CdmEntityContainer="bdelekti_ETicaretEntities">
+        <EntityContainerMapping StorageEntityContainer="bdelekti_E_TicaretModelStoreContainer" CdmEntityContainer="bdelekti_E_TicaretEntities1">
+          <EntitySetMapping Name="Kampanyalar">
+            <EntityTypeMapping TypeName="bdelekti_E_TicaretModel.Kampanyalar">
+              <MappingFragment StoreEntitySet="Kampanyalar">
+                <ScalarProperty Name="KampanyaId" ColumnName="KampanyaId" />
+                <ScalarProperty Name="KampanyaAd" ColumnName="KampanyaAd" />
+                <ScalarProperty Name="KampanyaBanner" ColumnName="KampanyaBanner" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Kategoriler">
             <EntityTypeMapping TypeName="bdelekti_E_TicaretModel.Kategoriler">
               <MappingFragment StoreEntitySet="Kategoriler">
@@ -193,8 +203,6 @@
           <EntitySetMapping Name="Urunler">
             <EntityTypeMapping TypeName="bdelekti_E_TicaretModel.Urunler">
               <MappingFragment StoreEntitySet="Urunler">
-                <ScalarProperty Name="UrünKampanyaId" ColumnName="UrünKampanyaId" />
-                <ScalarProperty Name="UrünIndirimFiyat" ColumnName="UrünIndirimFiyat" />
                 <ScalarProperty Name="UrunId" ColumnName="UrunId" />
                 <ScalarProperty Name="UrunAd" ColumnName="UrunAd" />
                 <ScalarProperty Name="UrunAciklama" ColumnName="UrunAciklama" />
@@ -202,15 +210,8 @@
                 <ScalarProperty Name="UrunKategoriId" ColumnName="UrunKategoriId" />
                 <ScalarProperty Name="UrunMarkaId" ColumnName="UrunMarkaId" />
                 <ScalarProperty Name="UrunResim" ColumnName="UrunResim" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Kampanyalar">
-            <EntityTypeMapping TypeName="bdelekti_E_TicaretModel.Kampanyalar">
-              <MappingFragment StoreEntitySet="Kampanyalar">
-                <ScalarProperty Name="KampanyaBanner" ColumnName="KampanyaBanner" />
-                <ScalarProperty Name="KampanyaAd" ColumnName="KampanyaAd" />
-                <ScalarProperty Name="KampanyaId" ColumnName="KampanyaId" />
+                <ScalarProperty Name="UrunIndirimFiyat" ColumnName="UrunIndirimFiyat" />
+                <ScalarProperty Name="UrunKampanyaId" ColumnName="UrunKampanyaId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

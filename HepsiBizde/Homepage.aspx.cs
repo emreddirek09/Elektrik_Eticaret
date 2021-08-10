@@ -89,7 +89,7 @@ namespace HepsiBizde
             try
             {
                 categoryId = Request.QueryString["KategoriId"].ToString();
-                //KampanyaId = Request.QueryString["UrünKampanyaId"].ToString();
+                //KampanyaId = Request.QueryString["UrunKampanyaId"].ToString();
                 UrunleriKategoriOlarakGetir(categoryId);
             }
             catch (Exception)

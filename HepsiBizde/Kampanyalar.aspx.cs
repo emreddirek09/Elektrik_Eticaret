@@ -32,7 +32,7 @@ namespace HepsiBizde
             SqlConnection baglanti = ConnectDatabaseti.ConnectDatabase();
             LinkButton link = (LinkButton)sender;
             deger = link.CommandArgument;
-            Response.Redirect("KampayaliUrunler.aspx?UrünKampanyaId=" + deger );
+            Response.Redirect("KampayaliUrunler.aspx?UrunKampanyaId=" + deger );
             baglanti.Close();
 
         }

@@ -23,7 +23,7 @@
                 <asp:TextBox ID="TxtSearch" CssClass="form-control" runat="server"></asp:TextBox>
             </div>
             <div class="col-1">
-                <asp:Button ID="Btn_Ara" CssClass="btn btn-success" runat="server" Text="ARA" />
+                <asp:Button ID="Btn_Ara" OnClick="Btn_Ara_Click" CssClass="btn btn-success" runat="server" Text="ARA" />
             </div>
         </div>
         <div id="page-content-wrapper">
@@ -117,7 +117,7 @@
                                 <div class="card-body">
                                     <p class="card-text"><%# Eval("UrunAciklama")%></p>
                                     <p class="text-primary font-weight-bold">
-                                        <s style="color: red"><%# String.Format("{0:c}", Eval("UrünIndirimFiyat"))%></s>  <%# String.Format("{0:c}", Eval("UrunFiyat"))%>
+                                        <s style="color: red"><%# String.Format("{0:c}", Eval("UrunIndirimFiyat"))%></s>  <%# String.Format("{0:c}", Eval("UrunFiyat"))%>
                                     </p>
                                 </div>
                             </div>
@@ -194,7 +194,7 @@
         <!-- Footer -->
         <footer class="text-center text-white" style="background-color: #0a4275;">
             <!-- Grid container -->
-            <div class="container p-4 pb-0">
+            <%--<div class="container p-4 pb-0">
                 <!-- Section: CTA -->
                 <section class="">
                     <p class="d-flex justify-content-center align-items-center">
@@ -205,17 +205,54 @@
                     </p>
                 </section>
                 <!-- Section: CTA -->
-            </div>
-            <!-- Grid container -->
+            </div>--%>
+            <div class="container p-4">
+                <!--Grid row-->
+                <div class="row">
+                    <!--Grid column-->
+                    <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Buradayız..</h5>
 
-            <!-- Copyright -->
+                        <p class="fa fa-address-card">
+                            Muğla Sıtkı Koçman Üniversitesi
+                        </p>
+                        <br />
+                        <p class="fa fa-mail-forward">
+                            info@bdelektrik.site
+                        </p>
+                        <br />
+                        <p class="fa fa-phone">
+                            05352808161
+                        </p>
+
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Kurumsal</h5>
+
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a href="Default.aspx" class="text-white">Giriş</a>
+                            </li>
+                            <li>
+                                <a href="Homepage.aspx" class="text-white">Ana Sayfa</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase mb-0">Kampanyalar</h5>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="Kampanyalar.aspx" class="text-white">Yeni Ürünler</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
             <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
                 © 2021 Copyright:
       <a class="text-white" href="https://mdbootstrap.com/">Emre Direk</a>
             </div>
-            <!-- Copyright -->
         </footer>
-        <!-- Footer -->
     </section>
 </body>
 

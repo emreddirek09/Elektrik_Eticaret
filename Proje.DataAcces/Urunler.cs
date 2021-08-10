@@ -21,7 +21,7 @@ namespace Proje.DataAcces
         public Nullable<int> UrunKategoriId { get; set; }
         public Nullable<int> UrunMarkaId { get; set; }
         public string UrunResim { get; set; }
-        public Nullable<decimal> UrünIndirimFiyat { get; set; }
-        public Nullable<int> UrünKampanyaId { get; set; }
+        public string UrunIndirimFiyat { get; set; }
+        public Nullable<int> UrunKampanyaId { get; set; }
     }
 }

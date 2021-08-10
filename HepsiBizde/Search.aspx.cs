@@ -8,39 +8,41 @@ using System.Web.UI.WebControls;
 
 namespace HepsiBizde
 {
-    public partial class WebForm9 : System.Web.UI.Page
+    public partial class WebForm10 : System.Web.UI.Page
     {
-        private string categoryId;
+        public string Id { get; private set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
             UrunKontrol();
         }
-        protected void UrunKontrol()
-        {
-            //try
-            //{
-                categoryId = Request.QueryString["UrunKampanyaId"].ToString();
-                //KampanyaId = Request.QueryString["UrünKampanyaId"].ToString();
-                UrunleriKategoriOlarakGetir(categoryId);
-            //}
-            //catch (Exception)
-            //{
-            //    throw;
-            //}
 
-        }
-        protected void UrunleriKategoriOlarakGetir(string cId)
+        protected void SearchUrunler(string cId)
         {
             DbConnection conn = new DbConnection();
             SqlConnection baglanti = conn.ConnectDatabase();
             //SqlCommand command = new SqlCommand("select * from Urunler join Markalar on Markalar.MarkaId = Urunler.UrunMarkaId join Kategoriler on Kategoriler.KategoriId = Urunler.UrunKategoriId WHERE Urunler.UrunKategoriId='" + cId + "' && Urunler.UrünKampanyaId ='" + kampid + "'", baglanti);
-            SqlCommand command = new SqlCommand("select * from Urunler join Markalar on Markalar.MarkaId = Urunler.UrunMarkaId join Kategoriler on Kategoriler.KategoriId = Urunler.UrunKategoriId WHERE Urunler.UrunKampanyaId='" + cId + "'", baglanti);
+            SqlCommand command = new SqlCommand("select * from Urunler join Markalar on Markalar.MarkaId = Urunler.UrunMarkaId join Kategoriler on Kategoriler.KategoriId = Urunler.UrunKategoriId WHERE Urunler.UrunAd LIKE '%" + cId + "%'", baglanti);
+           
 
             SqlDataReader okuyucu = command.ExecuteReader();
             ProductRepeater.DataSource = okuyucu;
             ProductRepeater.DataBind();
             baglanti.Close();
+        }
+        protected void UrunKontrol()
+        {
+            try
+            {
+                Id = Request.QueryString["UrunAd"].ToString();
+                SearchUrunler(Id);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+
         }
     }
 }

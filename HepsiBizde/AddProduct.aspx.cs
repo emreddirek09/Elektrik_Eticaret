@@ -92,12 +92,12 @@ namespace HepsiBizde
 
             DbConnection ConnectDatabaseti = new DbConnection();
             SqlConnection conn = ConnectDatabaseti.ConnectDatabase();            
-            SqlCommand sqlkomudumuz = new SqlCommand("Insert into Urunler (UrunAd,UrunAciklama,UrunFiyat,UrunKategoriId,UrunMarkaId,UrünKampanyaId,UrünIndirimFiyat,UrunResim) VALUES('"
+            SqlCommand sqlkomudumuz = new SqlCommand("Insert into Urunler (UrunAd,UrunAciklama,UrunFiyat,UrunKategoriId,UrunMarkaId,UrunKampanyaId,UrunIndirimFiyat,UrunResim) VALUES('"
                 + productname.Text + "','"
                 + productdesc.Text + "','" 
                 + Convert.ToDouble(productprice.Text) + "','"
                 + Convert.ToInt32(CategoryDropdown.SelectedItem.Value) + "','"
-                + Convert.ToInt32(BrandDropdown.SelectedItem.Value) + "',@KampanyaId,@UrünIndirimFiyat,@UrunResim)", conn);
+                + Convert.ToInt32(BrandDropdown.SelectedItem.Value) + "',@KampanyaId,@UrunIndirimFiyat,@UrunResim)", conn);
 
             if (DropDownListKampanya.SelectedValue == "-1")
             {
@@ -113,11 +113,11 @@ namespace HepsiBizde
 
             if (text == "")
             {
-                sqlkomudumuz.Parameters.AddWithValue("@UrünIndirimFiyat", "");
+                sqlkomudumuz.Parameters.AddWithValue("@UrunIndirimFiyat", "");
             } 
             else
             {
-                sqlkomudumuz.Parameters.AddWithValue("@UrünIndirimFiyat", discountedproductprice.Text);
+                sqlkomudumuz.Parameters.AddWithValue("@UrunIndirimFiyat", discountedproductprice.Text);
             }
 
             if (FileUpload1.HasFile)
