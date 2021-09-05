@@ -33,8 +33,6 @@ namespace Proje.Business
             return sonuc;
         }
 
-        
-
         public List<Proje.DataAcces.Urunler> KampanyaliUrünListele()
         {
 
