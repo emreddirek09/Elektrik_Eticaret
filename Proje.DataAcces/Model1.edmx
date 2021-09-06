@@ -4,12 +4,14 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="bdelekti_E_TicaretModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Kampanyalar">
+    <Schema Namespace="bdelekti_E_TicaretModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'bdelekti_E_Ticaret.bdelekti_TekDers.Kampanya' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Kampanya">
           <Key>
             <PropertyRef Name="KampanyaId" />
           </Key>
-          <Property Name="KampanyaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KampanyaId" Type="int" Nullable="false" />
           <Property Name="KampanyaAd" Type="nvarchar(max)" />
           <Property Name="KampanyaBanner" Type="nvarchar(max)" />
         </EntityType>
@@ -65,26 +67,23 @@
           <Property Name="UrunKampanyaId" Type="int" />
         </EntityType>
         <EntityContainer Name="bdelekti_E_TicaretModelStoreContainer">
-          <EntitySet Name="Kampanyalar" EntityType="Self.Kampanyalar" Schema="bdelekti_Emre" store:Type="Tables" />
           <EntitySet Name="Kategoriler" EntityType="Self.Kategoriler" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Markalar" EntityType="Self.Markalar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Siparisler" EntityType="Self.Siparisler" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Urunler" EntityType="Self.Urunler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kampanya" EntityType="Self.Kampanya" store:Type="Tables" store:Schema="bdelekti_TekDers">
+            <DefiningQuery>SELECT 
+    [Kampanya].[KampanyaId] AS [KampanyaId], 
+    [Kampanya].[KampanyaAd] AS [KampanyaAd], 
+    [Kampanya].[KampanyaBanner] AS [KampanyaBanner]
+    FROM [bdelekti_TekDers].[Kampanya] AS [Kampanya]</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="bdelekti_E_TicaretModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Kampanyalar">
-          <Key>
-            <PropertyRef Name="KampanyaId" />
-          </Key>
-          <Property Name="KampanyaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="KampanyaAd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="KampanyaBanner" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="Kategoriler">
           <Key>
             <PropertyRef Name="KategoriId" />
@@ -137,28 +136,27 @@
           <Property Name="UrunKampanyaId" Type="Int32" />
         </EntityType>
         <EntityContainer Name="bdelekti_E_TicaretEntities1" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Kampanyalar" EntityType="Self.Kampanyalar" />
           <EntitySet Name="Kategoriler" EntityType="Self.Kategoriler" />
           <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" />
           <EntitySet Name="Markalar" EntityType="Self.Markalar" />
           <EntitySet Name="Siparisler" EntityType="Self.Siparisler" />
           <EntitySet Name="Urunler" EntityType="Self.Urunler" />
+          <EntitySet Name="Kampanya" EntityType="bdelekti_E_TicaretModel.Kampanya" />
         </EntityContainer>
+        <EntityType Name="Kampanya">
+          <Key>
+            <PropertyRef Name="KampanyaId" />
+          </Key>
+          <Property Name="KampanyaId" Type="Int32" Nullable="false" />
+          <Property Name="KampanyaAd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="KampanyaBanner" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="bdelekti_E_TicaretModelStoreContainer" CdmEntityContainer="bdelekti_E_TicaretEntities1">
-          <EntitySetMapping Name="Kampanyalar">
-            <EntityTypeMapping TypeName="bdelekti_E_TicaretModel.Kampanyalar">
-              <MappingFragment StoreEntitySet="Kampanyalar">
-                <ScalarProperty Name="KampanyaId" ColumnName="KampanyaId" />
-                <ScalarProperty Name="KampanyaAd" ColumnName="KampanyaAd" />
-                <ScalarProperty Name="KampanyaBanner" ColumnName="KampanyaBanner" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Kategoriler">
             <EntityTypeMapping TypeName="bdelekti_E_TicaretModel.Kategoriler">
               <MappingFragment StoreEntitySet="Kategoriler">
@@ -212,6 +210,15 @@
                 <ScalarProperty Name="UrunResim" ColumnName="UrunResim" />
                 <ScalarProperty Name="UrunIndirimFiyat" ColumnName="UrunIndirimFiyat" />
                 <ScalarProperty Name="UrunKampanyaId" ColumnName="UrunKampanyaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kampanya">
+            <EntityTypeMapping TypeName="bdelekti_E_TicaretModel.Kampanya">
+              <MappingFragment StoreEntitySet="Kampanya">
+                <ScalarProperty Name="KampanyaBanner" ColumnName="KampanyaBanner" />
+                <ScalarProperty Name="KampanyaAd" ColumnName="KampanyaAd" />
+                <ScalarProperty Name="KampanyaId" ColumnName="KampanyaId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -92,12 +92,13 @@ namespace HepsiBizde
 
             DbConnection ConnectDatabaseti = new DbConnection();
             SqlConnection conn = ConnectDatabaseti.ConnectDatabase();            
-            SqlCommand sqlkomudumuz = new SqlCommand("Insert into Urunler (UrunAd,UrunAciklama,UrunFiyat,UrunKategoriId,UrunMarkaId,UrunKampanyaId,UrunIndirimFiyat,UrunResim) VALUES('"
-                + productname.Text + "','"
-                + productdesc.Text + "','" 
-                + Convert.ToDouble(productprice.Text) + "','"
-                + Convert.ToInt32(CategoryDropdown.SelectedItem.Value) + "','"
-                + Convert.ToInt32(BrandDropdown.SelectedItem.Value) + "',@KampanyaId,@UrunIndirimFiyat,@UrunResim)", conn);
+            SqlCommand sqlkomudumuz = new SqlCommand("Insert into Urunler (UrunAd,UrunAciklama,UrunFiyat,UrunKategoriId,UrunMarkaId,UrunKampanyaId,UrunIndirimFiyat,UrunResim) VALUES (@UrunAd,@UrunAciklama,@UrunFiyat,@UrunKategoriId,@UrunMarkaId,@KampanyaId,@UrunIndirimFiyat,@UrunResim)", conn);
+
+            sqlkomudumuz.Parameters.AddWithValue("@UrunAd", productname.Text);
+            sqlkomudumuz.Parameters.AddWithValue("@UrunAciklama", productdesc.Text);
+            sqlkomudumuz.Parameters.AddWithValue("@UrunFiyat", Convert.ToDouble(productprice.Text));
+            sqlkomudumuz.Parameters.AddWithValue("@UrunKategoriId", Convert.ToInt32(CategoryDropdown.SelectedItem.Value));
+            sqlkomudumuz.Parameters.AddWithValue("@UrunMarkaId", Convert.ToInt32(BrandDropdown.SelectedItem.Value));
 
             if (DropDownListKampanya.SelectedValue == "-1")
             {
@@ -107,10 +108,6 @@ namespace HepsiBizde
             {
                 sqlkomudumuz.Parameters.AddWithValue("@KampanyaId", Convert.ToInt32(DropDownListKampanya.SelectedValue));
             }
-
-
-
-
             if (text == "")
             {
                 sqlkomudumuz.Parameters.AddWithValue("@UrunIndirimFiyat", "");
@@ -135,7 +132,6 @@ namespace HepsiBizde
 
             //komut çalıştırıldı ve veritbaanına uygulandı
 
-            CategoryName.Value = "";
             conn.Close();
 
             ShowAllDatas();

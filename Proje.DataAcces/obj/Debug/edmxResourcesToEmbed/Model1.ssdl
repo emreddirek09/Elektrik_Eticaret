@@ -1,10 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="bdelekti_E_TicaretModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="Kampanyalar">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'bdelekti_E_Ticaret.bdelekti_TekDers.Kampanya' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Kampanya">
     <Key>
       <PropertyRef Name="KampanyaId" />
     </Key>
-    <Property Name="KampanyaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KampanyaId" Type="int" Nullable="false" />
     <Property Name="KampanyaAd" Type="nvarchar(max)" />
     <Property Name="KampanyaBanner" Type="nvarchar(max)" />
   </EntityType>
@@ -60,11 +62,17 @@
     <Property Name="UrunKampanyaId" Type="int" />
   </EntityType>
   <EntityContainer Name="bdelekti_E_TicaretModelStoreContainer">
-    <EntitySet Name="Kampanyalar" EntityType="Self.Kampanyalar" Schema="bdelekti_Emre" store:Type="Tables" />
     <EntitySet Name="Kategoriler" EntityType="Self.Kategoriler" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Markalar" EntityType="Self.Markalar" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Siparisler" EntityType="Self.Siparisler" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Urunler" EntityType="Self.Urunler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kampanya" EntityType="Self.Kampanya" store:Type="Tables" store:Schema="bdelekti_TekDers">
+      <DefiningQuery>SELECT 
+    [Kampanya].[KampanyaId] AS [KampanyaId], 
+    [Kampanya].[KampanyaAd] AS [KampanyaAd], 
+    [Kampanya].[KampanyaBanner] AS [KampanyaBanner]
+    FROM [bdelekti_TekDers].[Kampanya] AS [Kampanya]</DefiningQuery>
+    </EntitySet>
   </EntityContainer>
 </Schema>

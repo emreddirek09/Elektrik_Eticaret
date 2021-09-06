@@ -1,15 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="bdelekti_E_TicaretModelStoreContainer" CdmEntityContainer="bdelekti_E_TicaretEntities1">
-    <EntitySetMapping Name="Kampanyalar">
-      <EntityTypeMapping TypeName="bdelekti_E_TicaretModel.Kampanyalar">
-        <MappingFragment StoreEntitySet="Kampanyalar">
-          <ScalarProperty Name="KampanyaId" ColumnName="KampanyaId" />
-          <ScalarProperty Name="KampanyaAd" ColumnName="KampanyaAd" />
-          <ScalarProperty Name="KampanyaBanner" ColumnName="KampanyaBanner" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Kategoriler">
       <EntityTypeMapping TypeName="bdelekti_E_TicaretModel.Kategoriler">
         <MappingFragment StoreEntitySet="Kategoriler">
@@ -63,6 +54,15 @@
           <ScalarProperty Name="UrunResim" ColumnName="UrunResim" />
           <ScalarProperty Name="UrunIndirimFiyat" ColumnName="UrunIndirimFiyat" />
           <ScalarProperty Name="UrunKampanyaId" ColumnName="UrunKampanyaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kampanya">
+      <EntityTypeMapping TypeName="bdelekti_E_TicaretModel.Kampanya">
+        <MappingFragment StoreEntitySet="Kampanya">
+          <ScalarProperty Name="KampanyaBanner" ColumnName="KampanyaBanner" />
+          <ScalarProperty Name="KampanyaAd" ColumnName="KampanyaAd" />
+          <ScalarProperty Name="KampanyaId" ColumnName="KampanyaId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

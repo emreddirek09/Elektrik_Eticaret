@@ -16,7 +16,7 @@ namespace HepsiBizde
         {
             DbConnection ConnectDatabaseti = new DbConnection();
             SqlConnection baglanti = ConnectDatabaseti.ConnectDatabase();
-            SqlCommand komut = new SqlCommand("select * from Kampanyalar ", baglanti);
+            SqlCommand komut = new SqlCommand("select * from Kampanya ", baglanti);
             SqlDataReader reader = komut.ExecuteReader();
             RepeaterKampanya.DataSource = reader;
             RepeaterKampanya.DataBind();

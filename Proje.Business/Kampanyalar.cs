@@ -10,26 +10,26 @@ namespace Proje.Business
     { 
         string KampanyaAd { get; set; }
 
-        Proje.DataAcces.Kampanyalar kampanyalarEnt = new DataAcces.Kampanyalar();
+        Proje.DataAcces.Kampanya kampanya = new DataAcces.Kampanya();
         Proje.DataAcces.bdelekti_E_TicaretEntities1 ent = new DataAcces.bdelekti_E_TicaretEntities1();
 
         public string KampanyaEkle(string veri, string a)
         {
-            kampanyalarEnt.KampanyaAd = veri;
-            kampanyalarEnt.KampanyaBanner = a;
-            ent.Kampanyalar.Add(kampanyalarEnt);
+            kampanya.KampanyaAd = veri;
+            kampanya.KampanyaBanner = a;
+            ent.Kampanya.Add(kampanya);
             ent.SaveChanges();
             return "1";
         }
-        public Proje.DataAcces.Kampanyalar KategoriCek(int idd)
+        public Proje.DataAcces.Kampanya KategoriCek(int idd)
         {
-            var sonuc = ent.Kampanyalar.Where(p => p.KampanyaId == idd);
+            var sonuc = ent.Kampanya.Where(p => p.KampanyaId == idd);
             return sonuc.FirstOrDefault();
         }
        
-        public List<Proje.DataAcces.Kampanyalar> Listele()
+        public List<Proje.DataAcces.Kampanya> Listele()
         {
-            var sonuc = ent.Kampanyalar.ToList();
+            var sonuc = ent.Kampanya.ToList();
             return sonuc;
         }
 
@@ -37,7 +37,7 @@ namespace Proje.Business
         {
 
             var serv = (from Urn in ent.Urunler
-                         join kamp in ent.Kampanyalar 
+                         join kamp in ent.Kampanya
                          on Urn.UrunKampanyaId equals kamp.KampanyaId 
                          where Urn.UrunKampanyaId == kamp.KampanyaId
                          select Urn).ToList();

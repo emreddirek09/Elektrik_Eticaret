@@ -11,7 +11,7 @@
                 <div id='<%# Eval("UrunId")%>' class="col-md-3">
                     <div class="card">
                         <img class="card-img-top img-fluid" style="height: 250px!important" src='<%# Eval("UrunResim")%>' alt="Card image cap ">
-                        <div style="height: 200px!important" class="card-body">
+                        <div style="height: 280px!important" class="card-body text-center">
                             <h5 class="card-title"><%# Eval("UrunAd")%></h5>
                             <p class="card-text"><%# Eval("UrunAciklama")%></p>
                             <p class="card-text"><%# Eval("KategoriAd")%> / <%# Eval("MarkaAdi")%></p>

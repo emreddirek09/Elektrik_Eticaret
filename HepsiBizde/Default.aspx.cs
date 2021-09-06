@@ -200,7 +200,7 @@ namespace HepsiBizde
         {
             DbConnection ConnectDatabaseti = new DbConnection();
             SqlConnection baglanti = ConnectDatabaseti.ConnectDatabase();
-            SqlCommand komut = new SqlCommand("select TOP(1)* from Kampanyalar order by KampanyaId desc", baglanti);
+            SqlCommand komut = new SqlCommand("select TOP(1)* from Kampanya order by KampanyaId desc", baglanti);
             SqlDataReader reader = komut.ExecuteReader();
             Repeater2.DataSource = reader;
             Repeater2.DataBind();
