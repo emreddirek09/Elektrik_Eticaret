@@ -109,7 +109,7 @@
             <div class="DefaultUrunler row p-4 ">
                 <asp:Repeater ID="Repeater1" runat="server">
                     <ItemTemplate>
-                        <div class=" col-lg-3 col-md-6 col-sm-12 text-center">
+                        <div class=" col-lg-4 col-md-6 col-sm-12 text-center">
                             <div class="card" style="width: 440px; height: 600px !important">
                                 <a href="Homepage.aspx?KategoriId=<%# Eval("KategoriId")%>">
                                     <img style="width: 435px; height: 435px !important" src="<%# Eval("UrunResim")%>" class="card-img-top zoom" />
@@ -159,7 +159,7 @@
             <div class="DefaultUrunler row p-4">
                 <asp:Repeater ID="RepeaterUrunler" runat="server">
                     <ItemTemplate>
-                        <div class="col-lg-3 col-md-6 col-sm-12 text-center">
+                        <div class="col-lg-4 col-md-6 col-sm-12 text-center">
                             <div class="card" style="width: 440px; height: 600px !important">
                                 <a href="Homepage.aspx?KategoriId=<%# Eval("KategoriId")%>">
                                     <img style="width: 435px; height: 435px !important" src="<%# Eval("UrunResim")%>" class="card-img-top zoom" />

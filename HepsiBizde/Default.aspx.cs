@@ -189,7 +189,7 @@ namespace HepsiBizde
         {
             DbConnection ConnectDatabaseti = new DbConnection();
             SqlConnection baglanti = ConnectDatabaseti.ConnectDatabase();
-            SqlCommand komut = new SqlCommand("select TOP(4)* from Urunler join Markalar on Markalar.MarkaId = Urunler.UrunMarkaId join Kategoriler on Kategoriler.KategoriId = Urunler.UrunKategoriId WHERE Urunler.UrunIndirimFiyat != ''  order by Urunler.UrunId desc ", baglanti);
+            SqlCommand komut = new SqlCommand("select TOP(6)* from Urunler join Markalar on Markalar.MarkaId = Urunler.UrunMarkaId join Kategoriler on Kategoriler.KategoriId = Urunler.UrunKategoriId WHERE Urunler.UrunIndirimFiyat != ''  order by Urunler.UrunId desc ", baglanti);
             SqlDataReader reader = komut.ExecuteReader();
             Repeater1.DataSource = reader;
             Repeater1.DataBind();
