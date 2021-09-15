@@ -303,7 +303,27 @@ C:\Users\Emre\source\repos\Elektrik_Eticaret\HepsiBizde\bin\Proje.Business.pdb
 C:\Users\Emre\source\repos\Elektrik_Eticaret\HepsiBizde\bin\Proje.Business.dll.config
 C:\Users\Emre\source\repos\Elektrik_Eticaret\HepsiBizde\bin\Proje.DataAcces.pdb
 C:\Users\Emre\source\repos\Elektrik_Eticaret\HepsiBizde\bin\Proje.DataAcces.dll.config
-C:\Users\Emre\source\repos\Elektrik_Eticaret\HepsiBizde\bin\Newtonsoft.Json.dll
-C:\Users\Emre\source\repos\Elektrik_Eticaret\HepsiBizde\bin\RestSharp.dll
-C:\Users\Emre\source\repos\Elektrik_Eticaret\HepsiBizde\bin\Newtonsoft.Json.xml
-C:\Users\Emre\source\repos\Elektrik_Eticaret\HepsiBizde\bin\RestSharp.xml
+C:\Users\Efkan Önal\source\repos\EmreDirek\Elektrik_Eticaret\HepsiBizde\bin\HepsiBizde.dll.config
+C:\Users\Efkan Önal\source\repos\EmreDirek\Elektrik_Eticaret\HepsiBizde\bin\HepsiBizde.dll
+C:\Users\Efkan Önal\source\repos\EmreDirek\Elektrik_Eticaret\HepsiBizde\bin\HepsiBizde.pdb
+C:\Users\Efkan Önal\source\repos\EmreDirek\Elektrik_Eticaret\HepsiBizde\bin\EntityFramework.dll
+C:\Users\Efkan Önal\source\repos\EmreDirek\Elektrik_Eticaret\HepsiBizde\bin\EntityFramework.SqlServer.dll
+C:\Users\Efkan Önal\source\repos\EmreDirek\Elektrik_Eticaret\HepsiBizde\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Efkan Önal\source\repos\EmreDirek\Elektrik_Eticaret\HepsiBizde\bin\Newtonsoft.Json.dll
+C:\Users\Efkan Önal\source\repos\EmreDirek\Elektrik_Eticaret\HepsiBizde\bin\Proje.Business.dll
+C:\Users\Efkan Önal\source\repos\EmreDirek\Elektrik_Eticaret\HepsiBizde\bin\Proje.DataAcces.dll
+C:\Users\Efkan Önal\source\repos\EmreDirek\Elektrik_Eticaret\HepsiBizde\bin\RestSharp.dll
+C:\Users\Efkan Önal\source\repos\EmreDirek\Elektrik_Eticaret\HepsiBizde\bin\Proje.Business.pdb
+C:\Users\Efkan Önal\source\repos\EmreDirek\Elektrik_Eticaret\HepsiBizde\bin\Proje.Business.dll.config
+C:\Users\Efkan Önal\source\repos\EmreDirek\Elektrik_Eticaret\HepsiBizde\bin\Proje.DataAcces.pdb
+C:\Users\Efkan Önal\source\repos\EmreDirek\Elektrik_Eticaret\HepsiBizde\bin\Proje.DataAcces.dll.config
+C:\Users\Efkan Önal\source\repos\EmreDirek\Elektrik_Eticaret\HepsiBizde\bin\EntityFramework.xml
+C:\Users\Efkan Önal\source\repos\EmreDirek\Elektrik_Eticaret\HepsiBizde\bin\EntityFramework.SqlServer.xml
+C:\Users\Efkan Önal\source\repos\EmreDirek\Elektrik_Eticaret\HepsiBizde\bin\Newtonsoft.Json.xml
+C:\Users\Efkan Önal\source\repos\EmreDirek\Elektrik_Eticaret\HepsiBizde\bin\RestSharp.xml
+C:\Users\Efkan Önal\source\repos\EmreDirek\Elektrik_Eticaret\HepsiBizde\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Efkan Önal\source\repos\EmreDirek\Elektrik_Eticaret\HepsiBizde\obj\Debug\HepsiBizde.csproj.AssemblyReference.cache
+C:\Users\Efkan Önal\source\repos\EmreDirek\Elektrik_Eticaret\HepsiBizde\obj\Debug\HepsiBizde.csproj.CoreCompileInputs.cache
+C:\Users\Efkan Önal\source\repos\EmreDirek\Elektrik_Eticaret\HepsiBizde\obj\Debug\HepsiBizde.csproj.CopyComplete
+C:\Users\Efkan Önal\source\repos\EmreDirek\Elektrik_Eticaret\HepsiBizde\obj\Debug\HepsiBizde.dll
+C:\Users\Efkan Önal\source\repos\EmreDirek\Elektrik_Eticaret\HepsiBizde\obj\Debug\HepsiBizde.pdb

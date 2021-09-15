@@ -10,3 +10,15 @@ C:\Users\Emre\source\repos\Elektrik_Eticaret\Proje.DataAcces\obj\Debug\Proje.Dat
 C:\Users\Emre\source\repos\Elektrik_Eticaret\Proje.DataAcces\obj\Debug\Proje.DataAcces.csproj.CopyComplete
 C:\Users\Emre\source\repos\Elektrik_Eticaret\Proje.DataAcces\obj\Debug\Proje.DataAcces.dll
 C:\Users\Emre\source\repos\Elektrik_Eticaret\Proje.DataAcces\obj\Debug\Proje.DataAcces.pdb
+C:\Users\Efkan Önal\source\repos\EmreDirek\Elektrik_Eticaret\Proje.DataAcces\bin\Debug\Proje.DataAcces.dll.config
+C:\Users\Efkan Önal\source\repos\EmreDirek\Elektrik_Eticaret\Proje.DataAcces\bin\Debug\Proje.DataAcces.dll
+C:\Users\Efkan Önal\source\repos\EmreDirek\Elektrik_Eticaret\Proje.DataAcces\bin\Debug\Proje.DataAcces.pdb
+C:\Users\Efkan Önal\source\repos\EmreDirek\Elektrik_Eticaret\Proje.DataAcces\bin\Debug\EntityFramework.dll
+C:\Users\Efkan Önal\source\repos\EmreDirek\Elektrik_Eticaret\Proje.DataAcces\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Efkan Önal\source\repos\EmreDirek\Elektrik_Eticaret\Proje.DataAcces\bin\Debug\EntityFramework.xml
+C:\Users\Efkan Önal\source\repos\EmreDirek\Elektrik_Eticaret\Proje.DataAcces\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Efkan Önal\source\repos\EmreDirek\Elektrik_Eticaret\Proje.DataAcces\obj\Debug\Proje.DataAcces.csproj.AssemblyReference.cache
+C:\Users\Efkan Önal\source\repos\EmreDirek\Elektrik_Eticaret\Proje.DataAcces\obj\Debug\Proje.DataAcces.csproj.CoreCompileInputs.cache
+C:\Users\Efkan Önal\source\repos\EmreDirek\Elektrik_Eticaret\Proje.DataAcces\obj\Debug\Proje.DataAcces.csproj.CopyComplete
+C:\Users\Efkan Önal\source\repos\EmreDirek\Elektrik_Eticaret\Proje.DataAcces\obj\Debug\Proje.DataAcces.dll
+C:\Users\Efkan Önal\source\repos\EmreDirek\Elektrik_Eticaret\Proje.DataAcces\obj\Debug\Proje.DataAcces.pdb
