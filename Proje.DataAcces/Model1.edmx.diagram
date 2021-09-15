@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="ec495fe1b21f4c56862af8cd19868db2" Name="Diagram1">
         <EntityTypeShape EntityType="bdelekti_E_TicaretModel.Kategoriler" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="bdelekti_E_TicaretModel.Kullanicilar" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bdelekti_E_TicaretModel.Kullanicilar" Width="1.5" PointX="7.25" PointY="3" IsExpanded="true" />
         <EntityTypeShape EntityType="bdelekti_E_TicaretModel.Markalar" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="bdelekti_E_TicaretModel.Siparisler" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="bdelekti_E_TicaretModel.Urunler" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />

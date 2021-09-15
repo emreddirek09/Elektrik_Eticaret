@@ -18,12 +18,6 @@ namespace HepsiBizde.Services
     {
 
         [WebMethod]
-        public string HelloWorld()
-        {
-            return "Hello World";
-        }
-
-
         public List<Proje.DataAcces.Urunler> SearchFonksiyon(string text)
         {
             Proje.DataAcces.bdelekti_E_TicaretEntities1 ent = new Proje.DataAcces.bdelekti_E_TicaretEntities1();

@@ -65,17 +65,6 @@ namespace HepsiBizde
                 DropDownList1Urün.Items.Add(new ListItem(KatAdi, "Homepage.aspx?KategoriId="+ Katid.ToString()));
             }
         }
-        //private void KapmayaCek()
-        //{
-        //    Proje.Business.Kampanyalar kampanyalarNesne = new Proje.Business.Kampanyalar();
-        //    foreach (var item in kampanyalarNesne.Listele())
-        //    {
-        //        var i = item.KampanyaId;
-        //        string KatAdi = kampanyalarNesne.KategoriCek(i).KampanyaAd;
-        //        int Katid = kampanyalarNesne.KategoriCek(i).KampanyaId;
-        //        DropDownList2Kampanya.Items.Add(new ListItem(KatAdi, "Homepage.aspx?KampanyaId=" + Katid.ToString()));
-        //    }
-        //}
         
 
         protected void SEpettekiUrunleriGetir()

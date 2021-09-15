@@ -303,3 +303,7 @@ C:\Users\Emre\source\repos\Elektrik_Eticaret\HepsiBizde\bin\Proje.Business.pdb
 C:\Users\Emre\source\repos\Elektrik_Eticaret\HepsiBizde\bin\Proje.Business.dll.config
 C:\Users\Emre\source\repos\Elektrik_Eticaret\HepsiBizde\bin\Proje.DataAcces.pdb
 C:\Users\Emre\source\repos\Elektrik_Eticaret\HepsiBizde\bin\Proje.DataAcces.dll.config
+C:\Users\Emre\source\repos\Elektrik_Eticaret\HepsiBizde\bin\Newtonsoft.Json.dll
+C:\Users\Emre\source\repos\Elektrik_Eticaret\HepsiBizde\bin\RestSharp.dll
+C:\Users\Emre\source\repos\Elektrik_Eticaret\HepsiBizde\bin\Newtonsoft.Json.xml
+C:\Users\Emre\source\repos\Elektrik_Eticaret\HepsiBizde\bin\RestSharp.xml

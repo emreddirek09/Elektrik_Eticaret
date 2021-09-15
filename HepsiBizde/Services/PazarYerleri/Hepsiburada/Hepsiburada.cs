@@ -13,7 +13,7 @@ namespace HepsiBizde.Services.PazarYerleri.Hepsiburada
 {
     public class Hepsiburada
     {
-        public string tokenAlma(string kullaniciAdi, string sifre)
+        public string HepsiburadaTokenAlma(string kullaniciAdi, string sifre)
         {
             string sonuc = "";
 

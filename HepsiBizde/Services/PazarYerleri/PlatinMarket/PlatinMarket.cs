@@ -14,7 +14,7 @@ namespace HepsiBizde.Services.PazarYerleri.PlatinMarket
     { 
         private readonly string baseUrl = "http://developer.platinmarket.com/";
        
-        public string urunleriCek()
+        public string PlatinMarketUrunleriCek()
         {
             ServicePointManager.Expect100Continue = true;
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
